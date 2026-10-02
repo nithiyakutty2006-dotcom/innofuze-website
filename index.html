@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INNOFUZE TECHNOLOGIES | Creative Digital & Technology Solutions</title>
+    <meta name="description" content="Innofuze Technologies - We transform ideas into creative digital solutions through technology, design and innovation.">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="ambient-blob blob-1"></div>
+    <div class="ambient-blob blob-2"></div>
+    <div class="ambient-blob blob-3"></div>
+
+    <header class="navbar" id="navbar">
+        <a href="#home" class="logo" aria-label="INNOFUZE TECHNOLOGIES home">
+            <img class="brand-logo-image" src="innofuze-logo.png" alt="INNOFUZE TECHNOLOGIES">
+        </a>
+
+        <nav class="nav-links">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#services" class="nav-link">Services</a>
+            <a href="#about" class="nav-link">About Us</a>
+        </nav>
+
+        <div class="nav-actions">
+            <button id="chatBtn" class="btn-chat">Chat With Us</button>
+            <button id="registerBtn" class="btn-register">Register</button>
+        </div>
+    </header>
+
+    <main>
+        <section id="home" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-left">
+                    <h1 class="hero-title">
+                        Turning Ideas Into<br>
+                        <span class="gradient-text">Digital Solutions</span>
+                    </h1>
+
+                    <p class="hero-subtitle">
+                        At Innofuze, we blend creativity and technology to deliver software solutions and creative designs tailored to your needs.
+                    </p>
+
+                    <div class="hero-search-box">
+                        <svg class="hero-search-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                        <input type="text" id="heroSearchInput" placeholder="Search services...">
+                        <button class="hero-search-btn" id="heroSearchBtn">Search</button>
+                    </div>
+
+                    <div class="hero-tags">
+                        <span class="tag-label">Popular:</span>
+                        <button class="tag-chip" type="button">Web Dev</button>
+                        <button class="tag-chip" type="button">Digital Designs</button>
+                        <button class="tag-chip" type="button">Branding</button>
+                    </div>
+                </div>
+
+                <div class="hero-right">
+                    <div class="ref-hero-wrapper">
+                        <svg class="hero-reference-illustration" viewBox="0 0 760 460" role="img" aria-label="Design Create Grow card connected to creative, coding, interface, color, and growth icons" xmlns="http://www.w3.org/2000/svg">
+                            <defs>
+                                <filter id="heroTileShadow" x="-35%" y="-35%" width="180%" height="190%">
+                                    <feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#5275ac" flood-opacity=".17"/>
+                                </filter>
+                                <filter id="heroCardShadow" x="-35%" y="-35%" width="180%" height="190%">
+                                    <feDropShadow dx="0" dy="13" stdDeviation="13" flood-color="#5275ac" flood-opacity=".2"/>
+                                </filter>
+                                <linearGradient id="heroCardWash" x1="0" y1="0" x2=".9" y2="1">
+                                    <stop stop-color="#fff"/>
+                                    <stop offset="1" stop-color="#f8fbff"/>
+                                </linearGradient>
+                                <marker id="heroOrbitArrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
+                                    <path d="M0 0L8 4L0 8L2.2 4Z" fill="#347df0"/>
+                                </marker>
+                            </defs>
+
+                            <path d="M76 237C74 137 169 55 286 49C389 22 520 44 593 111C667 177 675 274 608 342C540 411 416 424 309 412C191 399 91 343 76 237Z" fill="#eaf5ff" opacity=".78"/>
+                            <path d="M126 212C128 149 162 100 221 71C293 35 385 36 449 64C515 45 583 74 623 122C658 164 667 215 651 252" fill="none" stroke="#4d91ff" stroke-width="2.5" stroke-dasharray="8 11" stroke-linecap="round" marker-end="url(#heroOrbitArrow)"/>
+                            <path d="M644 277C633 335 592 375 536 394" fill="none" stroke="#4d91ff" stroke-width="2.5" stroke-dasharray="8 11" stroke-linecap="round" marker-end="url(#heroOrbitArrow)"/>
+                            <path d="M404 416C322 433 223 411 166 362C135 335 118 302 118 267" fill="none" stroke="#4d91ff" stroke-width="2.5" stroke-dasharray="8 11" stroke-linecap="round" marker-end="url(#heroOrbitArrow)"/>
+
+                            <g fill="#fff" stroke="#2879f3" stroke-width="3">
+                                <circle cx="126" cy="212" r="6"/><circle cx="151" cy="128" r="5"/>
+                                <circle cx="221" cy="71" r="5"/><circle cx="417" cy="47" r="5"/>
+                                <circle cx="526" cy="72" r="5"/><circle cx="623" cy="122" r="6"/>
+                                <circle cx="651" cy="252" r="5"/><circle cx="608" cy="342" r="6"/>
+                                <circle cx="536" cy="394" r="5"/><circle cx="404" cy="416" r="5"/>
+                                <circle cx="166" cy="362" r="6"/><circle cx="118" cy="267" r="5"/>
+                            </g>
+
+                            <g filter="url(#heroTileShadow)">
+                                <rect x="200" y="26" width="76" height="72" rx="18" fill="#fff"/>
+                                <rect x="214" y="40" width="48" height="42" rx="6" fill="#3285f4"/>
+                                <path d="M219 72L230 58L238 66L246 55L258 72Z" fill="#d8edff"/>
+                                <circle cx="226" cy="49" r="3" fill="#fff"/>
+                                <path d="M249 78L268 59L274 65L255 84L247 86Z" fill="#1764dc"/>
+                            </g>
+
+                            <g filter="url(#heroTileShadow)">
+                                <rect x="454" y="38" width="76" height="72" rx="18" fill="#fff"/>
+                                <rect x="467" y="51" width="50" height="46" rx="8" fill="#1764e8"/>
+                                <path d="M485 62L477 74L485 84M499 62L507 74L499 84M496 59L488 87" fill="none" stroke="#fff" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+
+                            <g filter="url(#heroTileShadow)">
+                                <rect x="90" y="185" width="80" height="76" rx="19" fill="#fff"/>
+                                <circle cx="116" cy="211" r="10" fill="#3484f5"/>
+                                <circle cx="145" cy="211" r="10" fill="#ffb63e"/>
+                                <circle cx="116" cy="239" r="10" fill="#f34f72"/>
+                                <circle cx="145" cy="239" r="10" fill="#19bd78"/>
+                            </g>
+
+                            <g transform="rotate(-10 355 235)" filter="url(#heroCardShadow)">
+                                <rect x="232" y="99" width="250" height="276" rx="22" fill="url(#heroCardWash)" stroke="#e2ebf6" stroke-width="2"/>
+                                <text x="270" y="194" fill="#133b8f" font-family="Caveat, cursive" font-size="53" font-weight="700">Design</text>
+                                <text x="278" y="250" fill="#173d9b" font-family="Caveat, cursive" font-size="54" font-weight="700">Create</text>
+                                <text x="306" y="308" fill="#11a967" font-family="Caveat, cursive" font-size="55" font-weight="700">Grow</text>
+                                <path d="M306 321C337 305 367 303 400 291" fill="none" stroke="#4fd18e" stroke-width="5" stroke-linecap="round"/>
+                            </g>
+
+                            <g transform="rotate(38 418 154)" filter="url(#heroTileShadow)">
+                                <path d="M412 108H428V181L420 196L412 181Z" fill="#2789ee"/>
+                                <path d="M412 108H428V124H412Z" fill="#ffb638"/>
+                                <path d="M415 182H425L420 192Z" fill="#e9d8b2"/>
+                            </g>
+
+                            <g filter="url(#heroTileShadow)">
+                                <rect x="520" y="184" width="88" height="80" rx="18" fill="#fff"/>
+                                <rect x="531" y="196" width="66" height="54" rx="7" fill="#e9f3ff"/>
+                                <path d="M531 203Q531 196 538 196H590Q597 196 597 203V210H531Z" fill="#3183f2"/>
+                                <circle cx="539" cy="203" r="2.3" fill="#ffb63e"/><circle cx="546" cy="203" r="2.3" fill="#f34f72"/><circle cx="553" cy="203" r="2.3" fill="#19bd78"/>
+                                <rect x="539" y="218" width="22" height="20" rx="3" fill="#63a8f5"/>
+                                <path d="M542 235L548 227L553 232L557 226L560 230V235Z" fill="#fff"/>
+                                <path d="M566 221H590M566 228H588M539 244H588" stroke="#8cbef2" stroke-width="3" stroke-linecap="round"/>
+                            </g>
+
+                            <g filter="url(#heroTileShadow)">
+                                <rect x="416" y="350" width="82" height="76" rx="18" fill="#fff"/>
+                                <rect x="433" y="399" width="10" height="13" rx="3" fill="#34c77b"/>
+                                <rect x="449" y="389" width="10" height="23" rx="3" fill="#34c77b"/>
+                                <rect x="465" y="379" width="10" height="33" rx="3" fill="#34c77b"/>
+                                <path d="M435 392L449 381L459 385L478 364M468 364H479V375" fill="none" stroke="#13b96e" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            </g>
+
+                            <g font-family="'Plus Jakarta Sans', sans-serif" font-size="15" font-weight="700" fill="#123d89">
+                                <g><rect x="116" y="57" width="70" height="29" rx="15" fill="#e2f0ff" stroke="#d2e7ff"/><text x="151" y="76" text-anchor="middle">Idea</text></g>
+                                <g><rect x="550" y="55" width="92" height="29" rx="15" fill="#e2f0ff" stroke="#d2e7ff"/><text x="596" y="74" text-anchor="middle">Design</text></g>
+                                <g><rect x="52" y="286" width="80" height="29" rx="15" fill="#e2f0ff" stroke="#d2e7ff"/><text x="92" y="305" text-anchor="middle">Color</text></g>
+                                <g><rect x="626" y="210" width="96" height="29" rx="15" fill="#e2f0ff" stroke="#d2e7ff"/><text x="674" y="229" text-anchor="middle">Develop</text></g>
+                                <g><rect x="508" y="380" width="77" height="29" rx="15" fill="#e2f0ff" stroke="#d2e7ff"/><text x="546.5" y="399" text-anchor="middle">Grow</text></g>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="services-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-badge">WHAT WE OFFER</span>
+                    <h2 class="section-title">SERVICES WE PROVIDE</h2>
+                    <p class="section-subtitle">Tailored digital and technology solutions to elevate your brand and build impactful products.</p>
+                </div>
+
+                <div class="services-search-status hidden" id="servicesSearchStatus" aria-live="polite"></div>
+                <div class="services-grid" id="servicesGrid"></div>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="wave-divider-top">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                    <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="#ffffff"></path>
+                </svg>
+            </div>
+
+            <div class="section-container about-container">
+                <div class="about-header">
+                    <div class="about-logo-badge">
+                        <svg width="24" height="24" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect width="32" height="32" rx="8" fill="#ffffff" opacity="0.2"/>
+                            <path d="M10 8H22M16 8V24M10 24H22" stroke="#ffffff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <circle cx="16" cy="16" r="2.5" fill="#5eead4"/>
+                        </svg>
+                        <span>INNOFUZE TECHNOLOGIES</span>
+                    </div>
+                    <span class="about-badge">WHO WE ARE</span>
+                    <h2 class="about-title">ABOUT US</h2>
+                    <p class="about-tagline">YOUR IDEAS • OUR TECHNOLOGY</p>
+                </div>
+
+                <div class="about-card-glass">
+                    <p class="about-text-lead">
+                        At Innofuze, we blend creativity and technology to deliver software solutions and creative designs tailored to your needs.
+                    </p>
+                    <p class="about-text-body">
+                        From websites and software to branding and digital experiences, we turn ideas into clean, functional, and impactful solutions.
+                    </p>
+                    <p class="about-text-body">
+                        We work closely with our clients to transform their vision into reality through innovation, creativity, and technology.
+                    </p>
+                </div>
+
+                <div class="team-wrapper" id="team">
+                    <div class="team-header">
+                        <h3 class="team-title">OUR TEAM</h3>
+                        <p class="team-subtitle">Meet the team driving creativity and technology at Innofuze</p>
+                    </div>
+
+                    <div class="team-grid 5-members-grid">
+                        <div class="team-card featured">
+                            <div class="member-avatar avatar-purple">NI</div>
+                            <h4 class="member-name">Nithiyasree</h4>
+                            <div class="member-links">
+                                <a href="tel:+919360732895" class="member-link-item">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                    +91 93607 32895
+                                </a>
+                                <a href="https://www.linkedin.com/in/nithiyasree-i-414735372" target="_blank" rel="noopener noreferrer" class="member-link-item linkedin">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.6a1.4 1.4 0 1 0 1.4 1.4 1.4 1.4 0 0 0-1.4-1.4z"/></svg>
+                                    LinkedIn
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="team-card">
+                            <div class="member-avatar avatar-blue">NK</div>
+                            <h4 class="member-name">Naresh Kumar</h4>
+                            <div class="member-links">
+                                <a href="tel:+919363728969" class="member-link-item">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                    +91 93637 28969
+                                </a>
+                                <a href="https://www.linkedin.com/in/naresh-kumar-1172b9346/" target="_blank" rel="noopener noreferrer" class="member-link-item linkedin">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.6a1.4 1.4 0 1 0 1.4 1.4 1.4 1.4 0 0 0-1.4-1.4z"/></svg>
+                                    LinkedIn
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="team-card">
+                            <div class="member-avatar avatar-teal">SH</div>
+                            <h4 class="member-name">Srihariharan.S</h4>
+                            <div class="member-links">
+                                <a href="tel:+919342601355" class="member-link-item">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                    +91 93426 01355
+                                </a>
+                                <a href="https://www.linkedin.com/in/srihariharan-s-38b69a3b3?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="member-link-item linkedin">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.6a1.4 1.4 0 1 0 1.4 1.4 1.4 1.4 0 0 0-1.4-1.4z"/></svg>
+                                    LinkedIn
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="team-card">
+                            <div class="member-avatar avatar-pink">PR</div>
+                            <h4 class="member-name">Pragadheesh</h4>
+                            <div class="member-links">
+                                <a href="tel:+919597218952" class="member-link-item">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                    +91 95972 18952
+                                </a>
+                                <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer" class="member-link-item linkedin">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.6a1.4 1.4 0 1 0 1.4 1.4 1.4 1.4 0 0 0-1.4-1.4z"/></svg>
+                                    LinkedIn
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="team-card">
+                            <div class="member-avatar avatar-indigo">SS</div>
+                            <h4 class="member-name">Sridhar</h4>
+                            <div class="member-links">
+                                <a href="tel:+919342601355" class="member-link-item">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                                    +91 93426 01355
+                                </a>
+                                <a href="https://www.linkedin.com/in/sridhar-s-738444439" target="_blank" rel="noopener noreferrer" class="member-link-item linkedin">
+                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.6a1.4 1.4 0 1 0 1.4 1.4 1.4 1.4 0 0 0-1.4-1.4z"/></svg>
+                                    LinkedIn
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img class="footer-logo-image" src="innofuze-logo.png" alt="INNOFUZE TECHNOLOGIES">
+                </div>
+                <p class="footer-tagline">YOUR IDEAS • OUR TECHNOLOGY</p>
+                <p class="footer-desc">Turning ideas into clean, functional and impactful digital solutions.</p>
+                <div class="footer-contact-list">
+                    <a class="footer-contact-item" href="mailto:innofuzetech249@gmail.com">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v11a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 4 17.5v-11Z"></path>
+                            <path d="m5 7 7 5 7-5"></path>
+                        </svg>
+                        <span>Gmail: innofuzetech249@gmail.com</span>
+                    </a>
+                    <a class="footer-contact-item" href="tel:+919363645994">
+                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"></path>
+                        </svg>
+                        <span>Phone: +91 9363645994</span>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-copy">
+                &copy; 2026 INNOFUZE TECHNOLOGIES. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <div id="projectDetailModal" class="modal-overlay hidden">
+        <div class="project-modal-container">
+            <button type="button" class="modal-close" id="closeProjectModal" aria-label="Close project details">&times;</button>
+            <div id="projectDetailContent" class="project-detail-content"></div>
+        </div>
+    </div>
+
+    <div id="registerModal" class="modal-overlay hidden">
+        <div class="modal-container">
+            <button type="button" class="modal-close" id="closeRegisterModal" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <div class="modal-icon">✨</div>
+                <h3>Register with Innofuze</h3>
+                <p>Fill in your details to get started with our creative services.</p>
+            </div>
+
+            <form id="registerForm" class="modal-form" novalidate>
+                <div class="form-group">
+                    <label for="regName">Full Name</label>
+                    <input type="text" id="regName" placeholder="Enter your full name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="regMobile">Mobile Number</label>
+                    <input type="tel" id="regMobile" placeholder="Enter your phone number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="regEmail">Email Address</label>
+                    <input type="email" id="regEmail" placeholder="name@example.com" required>
+                </div>
+
+                <button type="submit" class="btn-submit" id="regSubmitBtn">Register Now</button>
+                <div id="regFormStatus" class="form-status-msg hidden"></div>
+            </form>
+        </div>
+    </div>
+
+    <div id="chatModal" class="modal-overlay hidden">
+        <div class="modal-container">
+            <button class="modal-close" id="closeChatModal" aria-label="Close modal">&times;</button>
+            <div class="modal-header">
+                <div class="modal-icon">💬</div>
+                <h3>How can we help you?</h3>
+                <p>Tell us what you need and we'll get back to you.</p>
+            </div>
+
+            <form id="chatModalForm" class="modal-form">
+                <div class="form-group">
+                    <label for="chatName">Name</label>
+                    <input type="text" id="chatName" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="chatMobile">Mobile Number</label>
+                    <input type="tel" id="chatMobile" placeholder="Enter your mobile number" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="chatEmail">Email Address</label>
+                    <input type="email" id="chatEmail" placeholder="name@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="chatMessage">Message</label>
+                    <textarea id="chatMessage" rows="3" placeholder="Type your requirement here..." required></textarea>
+                </div>
+
+                <div class="contact-form-actions" style="margin-top: 15px;">
+                    <button type="submit" class="btn-send-message" id="chatSubmitBtn">
+                        <span>Send Message</span>
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="22" y1="2" x2="11" y2="13"></line>
+                            <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                        </svg>
+                    </button>
+
+                    <button type="button" class="btn-whatsapp" id="chatWhatsappBtn">
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/>
+                        </svg>
+                        <span>Chat on WhatsApp</span>
+                    </button>
+                </div>
+                <div id="chatFormStatus" class="form-status-msg hidden"></div>
+            </form>
+        </div>
+    </div>
+
+    <div id="toast" class="toast hidden"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
