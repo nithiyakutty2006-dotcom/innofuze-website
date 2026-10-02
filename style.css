@@ -757,6 +757,23 @@ main {
     background: #0f172a;
 }
 
+.project-card-youtube,
+.project-preview-youtube {
+    display: block;
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 16 / 9;
+    border: 0;
+}
+
+.project-card-youtube {
+    pointer-events: none;
+}
+
+.project-preview-youtube {
+    max-height: 75vh;
+}
+
 .project-description-box,
 .project-detail-card,
 .project-documents {

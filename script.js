@@ -206,7 +206,7 @@ const projectsData = [
         id: 8,
         owner: 'Nithiyasree',
         name: 'Nithiyasree Project 01',
-        video: '/project-videos/interface%20svm%20random%20-%20Colab%20-%20Google%20Chrome%202026-04-04%2011-37-15.mp4',
+        youtubeUrl: 'https://youtu.be/5Zn_c-eQ99k',
         aspectRatio: '1920 / 1020',
         service: 'Machine Learning',
         description: 'A Google Colab notebook is shown with project code and output.',
@@ -217,7 +217,7 @@ const projectsData = [
         id: 9,
         owner: 'Nithiyasree',
         name: 'TechPulse',
-        video: '/project-videos/Recording%202026-09-09%20190446.mp4',
+        youtubeUrl: 'https://youtu.be/GqFc1RUd0W8',
         aspectRatio: '1912 / 1014',
         service: 'IT Infrastructure',
         description: 'The TechPulse dashboard presents CPU and RAM usage, running applications, and monitoring controls.',
@@ -228,7 +228,7 @@ const projectsData = [
         id: 10,
         owner: 'Nithiyasree',
         name: 'Nithiyasree Project 03',
-        video: '/project-videos/Recording%202026-09-12%20202730.mp4',
+        youtubeUrl: 'https://youtu.be/n6YmljCv_kk',
         aspectRatio: '1900 / 1078',
         service: 'Software Development',
         description: 'The recording shows source code in an editor and a separate command-line window with output.',
@@ -259,6 +259,7 @@ const projectDetailModal = document.getElementById('projectDetailModal');
 const closeProjectModalBtn = document.getElementById('closeProjectModal');
 const projectPreviewImage = document.getElementById('projectPreviewImage');
 const projectPreviewVideo = document.getElementById('projectPreviewVideo');
+const projectPreviewYoutube = document.getElementById('projectPreviewYoutube');
 const projectPreviewTitle = document.getElementById('projectPreviewTitle');
 const projectPreviewOwner = document.getElementById('projectPreviewOwner');
 const previousProjectBtn = document.getElementById('previousProject');
@@ -442,6 +443,25 @@ function getMatchingProjects(category = activeProjectFilter, query = activeProje
     });
 }
 
+function getYouTubeEmbedUrl(url, { autoplay, controls, loop = false } = {}) {
+    const parsedUrl = new URL(url);
+    const videoId = parsedUrl.hostname === 'youtu.be'
+        ? parsedUrl.pathname.slice(1)
+        : parsedUrl.searchParams.get('v');
+    const embedUrl = new URL(`https://www.youtube-nocookie.com/embed/${videoId}`);
+
+    embedUrl.searchParams.set('autoplay', autoplay ? '1' : '0');
+    embedUrl.searchParams.set('controls', controls ? '1' : '0');
+    embedUrl.searchParams.set('mute', '1');
+    embedUrl.searchParams.set('playsinline', '1');
+    if (loop) {
+        embedUrl.searchParams.set('loop', '1');
+        embedUrl.searchParams.set('playlist', videoId);
+    }
+
+    return embedUrl.href;
+}
+
 function renderProjects(category = activeProjectFilter, query = activeProjectQuery) {
     if (!projectsGrid) return;
 
@@ -472,7 +492,16 @@ function renderProjects(category = activeProjectFilter, query = activeProjectQue
         imageButton.setAttribute('aria-label', `Preview ${project.name}`);
 
         let previewVideo = null;
-        if (project.video) {
+        if (project.youtubeUrl) {
+            const previewFrame = document.createElement('iframe');
+            previewFrame.className = 'project-card-youtube';
+            previewFrame.src = getYouTubeEmbedUrl(project.youtubeUrl, { autoplay: true, controls: false, loop: true });
+            previewFrame.title = `${project.name} video preview`;
+            previewFrame.loading = 'lazy';
+            previewFrame.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+            previewFrame.tabIndex = -1;
+            imageButton.appendChild(previewFrame);
+        } else if (project.video) {
             previewVideo = document.createElement('video');
             previewVideo.className = 'project-card-video';
             previewVideo.src = project.video;
@@ -681,13 +710,32 @@ function updateProjectPreview() {
     const project = visibleProjects[activeProjectIndex];
     if (!project) return;
 
-    if (project.video && projectPreviewVideo) {
+    if (project.youtubeUrl && projectPreviewYoutube) {
+        projectPreviewImage.classList.add('hidden');
+        projectPreviewYoutube.classList.remove('hidden');
+        projectPreviewYoutube.src = getYouTubeEmbedUrl(project.youtubeUrl, { autoplay: true, controls: true });
+        projectPreviewYoutube.title = `${project.name} video`;
+        if (projectPreviewVideo) {
+            projectPreviewVideo.pause();
+            projectPreviewVideo.removeAttribute('src');
+            projectPreviewVideo.load();
+            projectPreviewVideo.classList.add('hidden');
+        }
+    } else if (project.video && projectPreviewVideo) {
+        if (projectPreviewYoutube) {
+            projectPreviewYoutube.removeAttribute('src');
+            projectPreviewYoutube.classList.add('hidden');
+        }
         projectPreviewImage.classList.add('hidden');
         projectPreviewVideo.classList.remove('hidden');
         projectPreviewVideo.src = project.video;
         projectPreviewVideo.setAttribute('aria-label', project.name);
         projectPreviewVideo.load();
     } else {
+        if (projectPreviewYoutube) {
+            projectPreviewYoutube.removeAttribute('src');
+            projectPreviewYoutube.classList.add('hidden');
+        }
         if (projectPreviewVideo) {
             projectPreviewVideo.pause();
             projectPreviewVideo.removeAttribute('src');
@@ -727,6 +775,10 @@ function closeProjectPreview() {
         projectPreviewVideo.removeAttribute('src');
         projectPreviewVideo.load();
         projectPreviewVideo.classList.add('hidden');
+    }
+    if (projectPreviewYoutube) {
+        projectPreviewYoutube.removeAttribute('src');
+        projectPreviewYoutube.classList.add('hidden');
     }
 }
 
