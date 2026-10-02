@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>INNOFUZE TECHNOLOGIES | Creative Digital & Technology Solutions</title>
     <meta name="description" content="Innofuze Technologies - We transform ideas into creative digital solutions through technology, design and innovation.">
+    <meta name="keywords" content="INNOFUZE Technologies, digital solutions, web development, software development, digital design, digital marketing, branding, project building">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="INNOFUZE TECHNOLOGIES | Creative Digital & Technology Solutions">
+    <meta property="og:description" content="Creative digital and technology solutions, including web development, digital design, marketing, branding, and project building.">
+    <meta property="og:image" content="innofuze-logo.png">
+    <link rel="icon" type="image/png" href="innofuze-favicon.png">
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,14 +23,18 @@
     <div class="ambient-blob blob-3"></div>
 
     <header class="navbar" id="navbar">
-        <a href="#home" class="logo" aria-label="INNOFUZE TECHNOLOGIES home">
+        <a href="/" class="logo" aria-label="INNOFUZE TECHNOLOGIES home">
             <img class="brand-logo-image" src="innofuze-logo.png" alt="INNOFUZE TECHNOLOGIES">
         </a>
 
         <nav class="nav-links">
-            <a href="#home" class="nav-link active">Home</a>
-            <a href="#services" class="nav-link">Services</a>
-            <a href="#about" class="nav-link">About Us</a>
+            <a href="/" class="nav-link active">Home</a>
+            <a href="/services" class="nav-link">Services</a>
+            <a href="/projects" class="nav-link">Projects</a>
+            <a href="/about" class="nav-link">About Us</a>
+            <a href="/faq" class="nav-link">FAQ</a>
+            <a href="/terms" class="nav-link">Terms &amp; Conditions</a>
+            <a href="/policies" class="nav-link">Company Policies</a>
         </nav>
 
         <div class="nav-actions">
@@ -176,6 +186,27 @@
             </div>
         </section>
 
+        <section id="our-projects" class="projects-section">
+            <div class="section-container">
+                <div class="section-header">
+                    <span class="section-badge">OUR WORK</span>
+                    <h2 class="section-title">OUR PROJECTS</h2>
+                    <p class="section-subtitle">Explore our creative and technology projects.</p>
+                </div>
+
+                <div class="project-filter-list" role="group" aria-label="Filter projects">
+                    <button class="project-filter active" type="button" data-project-filter="All Projects" aria-pressed="true">All Projects</button>
+                    <button class="project-filter" type="button" data-project-filter="Sridhar Projects" aria-pressed="false">Sridhar Projects</button>
+                    <button class="project-filter" type="button" data-project-filter="Swasthik Projects" aria-pressed="false">Swasthik Projects</button>
+                    <button class="project-filter" type="button" data-project-filter="Nithiyasree Projects" aria-pressed="false">Nithiyasree Projects</button>
+                    <button class="project-filter" type="button" data-project-filter="Sivanainar Projects" aria-pressed="false">Sivanainar Projects</button>
+                </div>
+
+                <div class="project-gallery-grid" id="projectsGrid" aria-live="polite"></div>
+                <p class="project-empty-state hidden" id="projectsEmptyState">No results found</p>
+            </div>
+        </section>
+
         <section id="about" class="about-section">
             <div class="wave-divider-top">
                 <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
@@ -219,76 +250,66 @@
                     <div class="team-grid 5-members-grid">
                         <div class="team-card featured">
                             <div class="member-avatar avatar-purple">NI</div>
-                            <h4 class="member-name">Nithiyasree</h4>
+                            <h4 class="member-name">Ms. I. Nithiyasree</h4>
+                            <p class="member-degree">B.Tech AI&amp;DS</p>
                             <div class="member-links">
-                                <a href="tel:+919360732895" class="member-link-item">
-                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                                    +91 93607 32895
-                                </a>
                                 <a href="https://www.linkedin.com/in/nithiyasree-i-414735372" target="_blank" rel="noopener noreferrer" class="member-link-item linkedin">
                                     <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.6a1.4 1.4 0 1 0 1.4 1.4 1.4 1.4 0 0 0-1.4-1.4z"/></svg>
                                     LinkedIn
                                 </a>
+                                <span class="member-services-note">Skilled in 5 Services</span>
                             </div>
                         </div>
 
                         <div class="team-card">
                             <div class="member-avatar avatar-blue">NK</div>
-                            <h4 class="member-name">Naresh Kumar</h4>
+                            <h4 class="member-name">Mr. A. Naresh Kumar</h4>
+                            <p class="member-degree">B.Tech AI&amp;DS</p>
                             <div class="member-links">
-                                <a href="tel:+919363728969" class="member-link-item">
-                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                                    +91 93637 28969
-                                </a>
-                                <a href="https://www.linkedin.com/in/naresh-kumar-1172b9346/" target="_blank" rel="noopener noreferrer" class="member-link-item linkedin">
+                                <a href="https://www.linkedin.com/in/nareshkumar-a-1172b9346?utm_source=share_via&amp;utm_content=profile&amp;utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="member-link-item linkedin">
                                     <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.6a1.4 1.4 0 1 0 1.4 1.4 1.4 1.4 0 0 0-1.4-1.4z"/></svg>
                                     LinkedIn
                                 </a>
+                                <span class="member-services-note">Skilled in 5 Services</span>
                             </div>
                         </div>
 
                         <div class="team-card">
                             <div class="member-avatar avatar-teal">SH</div>
-                            <h4 class="member-name">Srihariharan.S</h4>
+                            <h4 class="member-name">Mr. S. Srihariharan</h4>
+                            <p class="member-degree">B.Tech AI&amp;DS</p>
                             <div class="member-links">
-                                <a href="tel:+919342601355" class="member-link-item">
-                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                                    +91 93426 01355
-                                </a>
                                 <a href="https://www.linkedin.com/in/srihariharan-s-38b69a3b3?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" rel="noopener noreferrer" class="member-link-item linkedin">
                                     <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.6a1.4 1.4 0 1 0 1.4 1.4 1.4 1.4 0 0 0-1.4-1.4z"/></svg>
                                     LinkedIn
                                 </a>
+                                <span class="member-services-note">Skilled in 5 Services</span>
                             </div>
                         </div>
 
                         <div class="team-card">
                             <div class="member-avatar avatar-pink">PR</div>
-                            <h4 class="member-name">Pragadheesh</h4>
+                            <h4 class="member-name">Mr. S. Pragadeesh</h4>
+                            <p class="member-degree">B.Tech AI&amp;DS</p>
                             <div class="member-links">
-                                <a href="tel:+919597218952" class="member-link-item">
-                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                                    +91 95972 18952
-                                </a>
                                 <a href="https://www.linkedin.com/feed/" target="_blank" rel="noopener noreferrer" class="member-link-item linkedin">
                                     <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.6a1.4 1.4 0 1 0 1.4 1.4 1.4 1.4 0 0 0-1.4-1.4z"/></svg>
                                     LinkedIn
                                 </a>
+                                <span class="member-services-note">Skilled in 5 Services</span>
                             </div>
                         </div>
 
                         <div class="team-card">
                             <div class="member-avatar avatar-indigo">SS</div>
-                            <h4 class="member-name">Sridhar</h4>
+                            <h4 class="member-name">Mr. S. D. Sridhar</h4>
+                            <p class="member-degree">B.Tech AI&amp;DS</p>
                             <div class="member-links">
-                                <a href="tel:+919342601355" class="member-link-item">
-                                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
-                                    +91 93426 01355
-                                </a>
                                 <a href="https://www.linkedin.com/in/sridhar-s-738444439" target="_blank" rel="noopener noreferrer" class="member-link-item linkedin">
                                     <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.6a1.4 1.4 0 1 0 1.4 1.4 1.4 1.4 0 0 0-1.4-1.4z"/></svg>
                                     LinkedIn
                                 </a>
+                                <span class="member-services-note">Skilled in 5 Services</span>
                             </div>
                         </div>
                     </div>
@@ -315,12 +336,6 @@
                         </svg>
                         <span>Gmail: innofuzetech249@gmail.com</span>
                     </a>
-                    <a class="footer-contact-item" href="tel:+919363645994">
-                        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                            <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"></path>
-                        </svg>
-                        <span>Phone: +91 9363645994</span>
-                    </a>
                 </div>
             </div>
             <div class="footer-copy">
@@ -329,10 +344,23 @@
         </div>
     </footer>
 
-    <div id="projectDetailModal" class="modal-overlay hidden">
-        <div class="project-modal-container">
-            <button type="button" class="modal-close" id="closeProjectModal" aria-label="Close project details">&times;</button>
-            <div id="projectDetailContent" class="project-detail-content"></div>
+    <div id="projectDetailModal" class="modal-overlay project-lightbox hidden" role="dialog" aria-modal="true" aria-label="Project preview">
+        <div class="project-lightbox-container">
+            <button type="button" class="modal-close" id="closeProjectModal" aria-label="Close project preview">&times;</button>
+            <button type="button" class="project-preview-control previous" id="previousProject" aria-label="Previous project">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+            </button>
+            <figure class="project-preview-figure">
+                <img id="projectPreviewImage" src="" alt="">
+                <video id="projectPreviewVideo" class="project-preview-video hidden" controls playsinline preload="metadata"></video>
+                <figcaption>
+                    <strong id="projectPreviewTitle"></strong>
+                    <span id="projectPreviewOwner"></span>
+                </figcaption>
+            </figure>
+            <button type="button" class="project-preview-control next" id="nextProject" aria-label="Next project">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+            </button>
         </div>
     </div>
 
@@ -418,6 +446,23 @@
         </div>
     </div>
 
+    <div id="serviceEnquiryModal" class="modal-overlay service-enquiry-modal hidden" role="dialog" aria-modal="true" aria-labelledby="serviceEnquiryTitle">
+        <div class="modal-container service-enquiry-container">
+            <button type="button" class="modal-close" id="closeServiceEnquiry" aria-label="Close enquiry form">&times;</button>
+            <div class="modal-header">
+                <h3 id="serviceEnquiryTitle">Start a project enquiry</h3>
+                <p>Tell us a little about what you have in mind.</p>
+            </div>
+            <form id="serviceEnquiryForm" class="modal-form service-enquiry-form">
+                <div class="form-group"><label for="serviceEnquiryName">Name</label><input id="serviceEnquiryName" name="name" type="text" autocomplete="name" placeholder="Your name" required></div>
+                <div class="form-group"><label for="serviceEnquiryEmail">Email</label><input id="serviceEnquiryEmail" name="email" type="email" autocomplete="email" placeholder="name@example.com" required></div>
+                <div class="form-group"><label for="serviceEnquiryService">Selected Service</label><select id="serviceEnquiryService" name="service" required><option value="" disabled>Select a service</option><option>Website &amp; Application Development</option><option>Digital Marketing</option><option>Project Building</option><option>Branding</option><option>Digital Design</option></select></div>
+                <div class="form-group"><label for="serviceEnquiryDescription">Project Description</label><textarea id="serviceEnquiryDescription" name="message" rows="4" placeholder="What would you like us to help you build?" required></textarea></div>
+                <button type="submit" class="btn-submit" id="serviceEnquirySubmit">Submit Enquiry</button>
+                <div id="serviceEnquiryStatus" class="form-status-msg hidden" aria-live="polite"></div>
+            </form>
+        </div>
+    </div>
     <div id="toast" class="toast hidden"></div>
 
     <script src="script.js"></script>

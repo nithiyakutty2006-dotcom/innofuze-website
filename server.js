@@ -1,7 +1,6 @@
 const express = require('express');
 const fs = require('fs');
 const path = require('path');
-const nodemailer = require('nodemailer');
 const rateLimit = require('express-rate-limit');
 
 const projectEnvPath = path.resolve(__dirname, '.env');
@@ -9,58 +8,10 @@ require('dotenv').config({ path: projectEnvPath });
 
 const app = express();
 const PORT = Number(process.env.PORT || 3000);
-const ADMIN_EMAIL = 'inithiyasree@gmail.com';
+const ADMIN_EMAIL = (process.env.ADMIN_EMAIL || 'innofuzetech249@gmail.com').trim();
+const FORMSPREE_ENDPOINT = (process.env.FORMSPREE_ENDPOINT || '').trim();
 const WHATSAPP_NUMBER = (process.env.WHATSAPP_NUMBER || '919360732895').trim();
 const DATA_FILE = path.join(__dirname, 'data', 'contact-requests.json');
-
-function getEffectiveEnvValue(key) {
-  return (process.env[key] || '').trim();
-}
-
-function getSmtpConfig() {
-  const host = getEffectiveEnvValue('SMTP_HOST');
-  const portValue = getEffectiveEnvValue('SMTP_PORT');
-  const port = Number(portValue);
-  const user = getEffectiveEnvValue('SMTP_USERNAME');
-  const pass = getEffectiveEnvValue('SMTP_PASSWORD');
-  const from = getEffectiveEnvValue('SMTP_FROM');
-  const secure = port === 465;
-
-  return { host, portValue, port, secure, user, pass, from };
-}
-
-let smtpTransporter;
-
-function getSmtpTransporter() {
-  if (smtpTransporter) return smtpTransporter;
-
-  const { host, port, secure, user, pass } = getSmtpConfig();
-  smtpTransporter = nodemailer.createTransport({
-    host,
-    port,
-    secure,
-    requireTLS: port === 587,
-    connectionTimeout: 15000,
-    greetingTimeout: 15000,
-    socketTimeout: 20000,
-    auth: { user, pass }
-  });
-
-  return smtpTransporter;
-}
-
-function getSmtpStatus() {
-  const smtpConfig = getSmtpConfig();
-  const validPort = Boolean(smtpConfig.portValue && Number.isInteger(smtpConfig.port) && smtpConfig.port > 0 && smtpConfig.port <= 65535);
-  return {
-    host: Boolean(smtpConfig.host),
-    port: validPort,
-    username: Boolean(smtpConfig.user),
-    password: Boolean(smtpConfig.pass),
-    from: Boolean(smtpConfig.from),
-    loaded: Boolean(smtpConfig.host && validPort && smtpConfig.user && smtpConfig.pass && smtpConfig.from)
-  };
-}
 
 function ensureDataFile() {
   if (!fs.existsSync(DATA_FILE)) {
@@ -89,91 +40,41 @@ function normalizePhone(value) {
   return String(value || '').trim().replace(/[\s()\-]/g, '');
 }
 
-function escapeHtml(value) {
-  return String(value ?? '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/\"/g, '&quot;').replace(/'/g, '&#39;');
-}
-
 function validateEmail(email) {
   return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(String(email || '').trim());
 }
 
-function buildAdminMessage(contact) {
-  const submittedAt = contact.submitted_at ? new Date(contact.submitted_at).toLocaleString() : new Date().toLocaleString();
-
-  if (contact.type === 'registration') {
-    return [
-      'New Registration - Innofuze Technologies',
-      '',
-      `Name: ${contact.name}`,
-      `Email: ${contact.email}`,
-      `Phone: ${contact.phone}`,
-      `Submitted At: ${submittedAt}`
-    ].join('\n');
-  }
-
-  return [
-    'New Contact Enquiry - Innofuze Technologies',
-    '',
-    `Name: ${contact.name}`,
-    `Email: ${contact.email}`,
-    `Phone: ${contact.phone}`,
-    `Submitted At: ${submittedAt}`,
-    '',
-    'Message:',
-    contact.message
-  ].join('\n');
-}
-
 async function notifyAdmin(contact) {
-  const smtpConfig = getSmtpConfig();
-  const smtpFrom = smtpConfig.from;
+  if (!FORMSPREE_ENDPOINT) return false;
+
   const subject = contact.type === 'registration'
-    ? 'New Registration - Innofuze Technologies'
+    ? 'New Registration Received'
     : 'New Contact Enquiry - Innofuze Technologies';
 
-  const missing = getMissingSmtpSettings();
-  if (missing.length > 0) {
-    console.error(`Email not sent. SMTP is not configured for ${contact.type}. Missing: ${missing.join(', ') || 'none'}.`);
-    return false;
-  }
-
   try {
-    const replyTo = contact.type === 'enquiry' ? contact.email : undefined;
-
-    await getSmtpTransporter().sendMail({
-      from: `"Innofuze Technologies" <${smtpFrom}>`,
-      to: ADMIN_EMAIL,
-      replyTo,
-      subject,
-      text: buildAdminMessage(contact),
-      html: `<div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111827;">
-        <h3 style="margin-bottom: 12px; color: #0f172a;">${subject}</h3>
-        <p><strong>Name:</strong> ${escapeHtml(contact.name || '')}</p>
-        <p><strong>Email:</strong> ${escapeHtml(contact.email || '')}</p>
-        <p><strong>Phone:</strong> ${escapeHtml(contact.phone || '')}</p>
-        ${contact.message ? `<p><strong>Message:</strong><br>${escapeHtml(contact.message || '').replace(/\n/g, '<br>')}</p>` : ''}
-        <p><strong>Submitted At:</strong> ${escapeHtml(new Date(contact.submitted_at || Date.now()).toLocaleString())}</p>
-      </div>`
+    const response = await fetch(FORMSPREE_ENDPOINT, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify({
+        ...contact,
+        _replyto: contact.email,
+        _subject: subject
+      })
     });
+
+    if (!response.ok) {
+      console.error(`Formspree delivery failed for ${contact.type}: HTTP ${response.status}`);
+      return false;
+    }
 
     return true;
   } catch (error) {
-    console.error(`Email sending failed for ${contact.type}: ${error.code || error.responseCode || 'SMTP_ERROR'}`);
+    console.error(`Formspree delivery failed for ${contact.type}.`);
     return false;
   }
-}
-
-function getMissingSmtpSettings() {
-  const smtpConfig = getSmtpConfig();
-  const missing = [];
-
-  if (!smtpConfig.host) missing.push('SMTP_HOST');
-  if (!smtpConfig.portValue || !Number.isInteger(smtpConfig.port) || smtpConfig.port < 1 || smtpConfig.port > 65535) missing.push('SMTP_PORT');
-  if (!smtpConfig.user) missing.push('SMTP_USERNAME');
-  if (!smtpConfig.pass) missing.push('SMTP_PASSWORD');
-  if (!smtpConfig.from) missing.push('SMTP_FROM');
-
-  return missing;
 }
 
 function createSubmissionRateLimiter() {
@@ -202,21 +103,7 @@ app.use((req, res, next) => {
 });
 app.use(express.static(__dirname));
 
-const smtpStatus = getSmtpStatus();
-console.log(`SMTP_HOST configured: ${smtpStatus.host ? 'YES' : 'NO'}`);
-console.log(`SMTP_PORT configured: ${smtpStatus.port ? 'YES' : 'NO'}`);
-console.log(`SMTP_USERNAME configured: ${smtpStatus.username ? 'YES' : 'NO'}`);
-console.log(`SMTP_PASSWORD configured: ${smtpStatus.password ? 'YES' : 'NO'}`);
-console.log(`SMTP_FROM configured: ${smtpStatus.from ? 'YES' : 'NO'}`);
-console.log(`SMTP configuration loaded: ${smtpStatus.loaded ? 'YES' : 'NO'}`);
-
-if (smtpStatus.loaded) {
-  getSmtpTransporter().verify()
-    .then(() => console.log('SMTP transporter verification: SUCCESS'))
-    .catch(error => console.error(`SMTP transporter verification: FAIL (${error.code || 'SMTP_ERROR'})`));
-} else {
-  console.log('SMTP transporter verification: SKIPPED (configuration incomplete)');
-}
+console.log(`Formspree endpoint configured: ${FORMSPREE_ENDPOINT ? 'YES' : 'NO'}`);
 
 app.get('/api/config', (_req, res) => {
   res.json({
@@ -227,9 +114,9 @@ app.get('/api/config', (_req, res) => {
 
 app.post('/api/contact', contactRateLimiter, async (req, res) => {
   try {
-    const { name, email, phone, message } = req.body || {};
+    const { name, email, phone, message, service } = req.body || {};
 
-    if (!name || !email || !phone || !message) {
+    if (!name || !email || !message || (!phone && !service)) {
       return res.status(400).json({ error: 'All fields are required.' });
     }
 
@@ -237,16 +124,22 @@ app.post('/api/contact', contactRateLimiter, async (req, res) => {
     const cleanEmail = String(email).trim();
     const cleanPhone = normalizePhone(phone);
     const cleanMessage = String(message).trim();
+    const cleanService = String(service || '').trim();
 
-    if (!cleanName || !cleanEmail || !cleanPhone || !cleanMessage) {
+    if (!cleanName || !cleanEmail || !cleanMessage || (!cleanPhone && !cleanService)) {
       return res.status(400).json({ error: 'All fields are required.' });
+    }
+
+    const supportedServices = ['Website & Application Development', 'Digital Marketing', 'Project Building', 'Branding', 'Digital Design'];
+    if (cleanService && !supportedServices.includes(cleanService)) {
+      return res.status(400).json({ error: 'Please select a valid service.' });
     }
 
     if (!validateEmail(cleanEmail)) {
       return res.status(400).json({ error: 'Please enter a valid email address.' });
     }
 
-    if (!/^(?:\+?91|91)?[0-9]{10}$/.test(cleanPhone)) {
+    if (cleanPhone && !/^(?:\+?91|91)?[0-9]{10}$/.test(cleanPhone)) {
       return res.status(400).json({ error: 'Please enter a valid phone number.' });
     }
 
@@ -256,20 +149,10 @@ app.post('/api/contact', contactRateLimiter, async (req, res) => {
       name: cleanName,
       email: cleanEmail,
       phone: cleanPhone,
+      ...(cleanService ? { service: cleanService } : {}),
       message: cleanMessage,
       submitted_at: new Date().toISOString()
     };
-
-    const missingSmtpSettings = getMissingSmtpSettings();
-    if (missingSmtpSettings.length > 0) {
-      const configurationError = `Missing SMTP configuration: ${missingSmtpSettings.join(', ')}.`;
-      console.error(`Contact email not sent. ${configurationError}`);
-      return res.status(503).json({
-        error: 'Unable to send your message right now. Please try again.',
-        code: 'SMTP_NOT_CONFIGURED',
-        configurationError
-      });
-    }
 
     const emailSent = await notifyAdmin(newRequest);
 
@@ -329,17 +212,6 @@ app.post('/api/register', registrationRateLimiter, async (req, res) => {
       submitted_at: new Date().toISOString()
     };
 
-    const missingSmtpSettings = getMissingSmtpSettings();
-    if (missingSmtpSettings.length > 0) {
-      const configurationError = `Missing SMTP configuration: ${missingSmtpSettings.join(', ')}.`;
-      console.error(`Registration email not sent. ${configurationError}`);
-      return res.status(503).json({
-        error: 'Unable to complete registration right now. Please try again.',
-        code: 'SMTP_NOT_CONFIGURED',
-        configurationError
-      });
-    }
-
     const emailSent = await notifyAdmin(newRequest);
 
     if (emailSent === false) {
@@ -368,6 +240,42 @@ app.post('/api/register', registrationRateLimiter, async (req, res) => {
 
 app.get('/health', (_req, res) => {
   res.json({ ok: true, status: 'healthy' });
+});
+
+const pageRoutes = {
+  '/services': 'services.html',
+  '/projects': 'projects.html',
+  '/about': 'about.html',
+  '/faq': 'faq.html',
+  '/terms': 'terms.html',
+  '/policies': 'policies.html'
+};
+
+const serviceDetailRoutes = new Set([
+  'web-application-development',
+  'digital-marketing',
+  'project-building',
+  'branding',
+  'digital-design'
+]);
+
+app.get('/services/:serviceId', (req, res, next) => {
+  if (!serviceDetailRoutes.has(req.params.serviceId)) return next();
+  res.sendFile(path.join(__dirname, 'services.html'));
+});
+
+Object.entries(pageRoutes).forEach(([route, fileName]) => {
+  app.get([route, `${route}/`], (_req, res) => {
+    res.sendFile(path.join(__dirname, fileName));
+  });
+});
+
+app.get('*', (req, res) => {
+  if (req.path.startsWith('/api/')) {
+    return res.status(404).json({ error: 'Not found.' });
+  }
+
+  res.status(404).sendFile(path.join(__dirname, '404.html'));
 });
 
 app.listen(PORT, () => {

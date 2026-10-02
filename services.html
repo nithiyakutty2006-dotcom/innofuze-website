@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Services | INNOFUZE TECHNOLOGIES</title>
+    <meta name="description" content="Explore Innofuze Technologies services: website and application development, digital designs, digital marketing, branding, and project building.">
+    <meta name="keywords" content="INNOFUZE Technologies, website development, application development, digital designs, digital marketing, branding, project building">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Services | INNOFUZE TECHNOLOGIES">
+    <meta property="og:description" content="Digital and technology services from Innofuze Technologies.">
+    <meta property="og:image" content="innofuze-logo.png">
+    <link rel="icon" type="image/png" href="innofuze-favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="ambient-blob blob-1"></div><div class="ambient-blob blob-2"></div><div class="ambient-blob blob-3"></div>
+    <header class="navbar">
+        <a href="/" class="logo" aria-label="INNOFUZE TECHNOLOGIES home"><img class="brand-logo-image" src="innofuze-logo.png" alt="INNOFUZE TECHNOLOGIES"></a>
+        <nav class="nav-links" aria-label="Main navigation">
+            <a href="/" class="nav-link">Home</a><a href="/services" class="nav-link active" aria-current="page">Services</a><a href="/projects" class="nav-link">Projects</a><a href="/about" class="nav-link">About Us</a><a href="/faq" class="nav-link">FAQ</a><a href="/terms" class="nav-link">Terms &amp; Conditions</a><a href="/policies" class="nav-link">Company Policies</a>
+        </nav>
+        <div class="nav-actions"><a class="btn-chat" href="/?action=chat">Chat With Us</a><a class="btn-register" href="/?action=register">Register</a></div>
+    </header>
+    <main class="site-page-main">
+        <div class="page-container">
+            <div id="servicesCatalog">
+            <header class="page-heading">
+                <span class="section-badge">WHAT WE OFFER</span>
+                <h1 class="section-title">SERVICES WE PROVIDE</h1>
+                <p class="section-subtitle">Tailored digital and technology solutions to elevate your brand and build impactful products.</p>
+            </header>
+            <div class="services-grid" id="servicesGrid"></div>
+            </div>
+            <div id="serviceDetailMount" class="hidden"></div>
+        </div>
+    </main>
+    <footer class="site-footer"><div class="footer-container">
+        <div class="footer-brand"><div class="footer-logo"><img class="footer-logo-image" src="innofuze-logo.png" alt="INNOFUZE TECHNOLOGIES"></div><p class="footer-tagline">YOUR IDEAS • OUR TECHNOLOGY</p><p class="footer-desc">Turning ideas into clean, functional and impactful digital solutions.</p><div class="footer-contact-list"><a class="footer-contact-item" href="mailto:innofuzetech249@gmail.com">Gmail: innofuzetech249@gmail.com</a></div></div>
+        <div class="footer-copy">&copy; 2026 INNOFUZE TECHNOLOGIES. All rights reserved.</div>
+    </div></footer>
+    <div id="serviceEnquiryModal" class="modal-overlay service-enquiry-modal hidden" role="dialog" aria-modal="true" aria-labelledby="serviceEnquiryTitle">
+        <div class="modal-container service-enquiry-container">
+            <button type="button" class="modal-close" id="closeServiceEnquiry" aria-label="Close enquiry form">&times;</button>
+            <div class="modal-header">
+                <h3 id="serviceEnquiryTitle">Start a project enquiry</h3>
+                <p>Tell us a little about what you have in mind.</p>
+            </div>
+            <form id="serviceEnquiryForm" class="modal-form service-enquiry-form">
+                <div class="form-group"><label for="serviceEnquiryName">Name</label><input id="serviceEnquiryName" name="name" type="text" autocomplete="name" placeholder="Your name" required></div>
+                <div class="form-group"><label for="serviceEnquiryEmail">Email</label><input id="serviceEnquiryEmail" name="email" type="email" autocomplete="email" placeholder="name@example.com" required></div>
+                <div class="form-group"><label for="serviceEnquiryService">Selected Service</label><select id="serviceEnquiryService" name="service" required><option value="" disabled>Select a service</option><option>Website &amp; Application Development</option><option>Digital Marketing</option><option>Project Building</option><option>Branding</option><option>Digital Design</option></select></div>
+                <div class="form-group"><label for="serviceEnquiryDescription">Project Description</label><textarea id="serviceEnquiryDescription" name="message" rows="4" placeholder="What would you like us to help you build?" required></textarea></div>
+                <button type="submit" class="btn-submit" id="serviceEnquirySubmit">Submit Enquiry</button>
+                <div id="serviceEnquiryStatus" class="form-status-msg hidden" aria-live="polite"></div>
+            </form>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

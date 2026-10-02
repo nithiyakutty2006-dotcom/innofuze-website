@@ -4,48 +4,245 @@
 
 const servicesData = [
     {
-        id: "web-dev",
+        id: "web-application-development",
         title: "Website & Application Development",
-        desc: "Custom, scalable web applications and high-performance mobile solutions built with modern technology.",
+        desc: "Modern, responsive websites and applications built for businesses, startups, students, and organizations.",
+        cardImage: "https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=900&q=82",
+        cardImageAlt: "Website and application interfaces displayed across desktop, tablet, and phone screens",
         colorClass: "card-blue",
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>`
-    },
-    {
-        id: "digital-designs",
-        title: "Digital Designs",
-        desc: "Creative UI/UX designs, wireframes, and interactive prototypes tailored for user engagement.",
-        colorClass: "card-purple",
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>`
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"></rect><path d="M8 21h8M12 17v4"></path></svg>`,
+        heroVisual: "devices",
+        heroLabels: ["Business website", "Mobile ready", "Easy to explore"],
+        description: "We design and develop modern, responsive and user-friendly websites and applications for businesses, startups, students and organizations.",
+        useCases: [
+            ["Business Websites", "Build a professional online presence for your business, services and customers.", "browser", ["Your business", "Services", "Let’s talk"]],
+            ["E-Commerce", "Sell products online with a complete digital shopping experience.", "commerce", ["New arrivals", "Shop collection", "Your cart"]],
+            ["Portfolio Websites", "Showcase your skills, projects, achievements and professional work.", "portfolio", ["Selected work", "Case studies", "About me"]],
+            ["Management Systems", "Manage users, data, records, reports and business operations digitally.", "dashboard", ["Overview", "Active users", "Monthly report"]],
+            ["Mobile Applications", "Create mobile experiences that users can access anytime.", "mobile", ["Today", "Quick actions", "Your activity"]]
+        ],
+        helps: ["Reach customers wherever they browse.", "Make important information easier to find.", "Bring services and workflows into one useful experience."],
+        projects: [
+            ["Restaurant Business Website", "restaurant", "A sample restaurant concept bringing its menu, story, gallery and enquiry into one responsive website.", ["Home", "Menu", "About", "Gallery", "Contact", "Online enquiry"]],
+            ["Student Management System", "dashboard", "A sample student portal concept for common academic tasks and records.", ["Student login", "Attendance", "Marks", "Assignments", "Dashboard", "Admin panel"]]
+        ],
+        process: ["Requirement analysis", "UI/UX design", "Development", "Testing", "Deployment", "Support"],
+        reasons: ["Responsive layouts for different screens.", "Clear project milestones and review points.", "A considered balance of usability, performance and maintainability."]
     },
     {
         id: "digital-marketing",
         title: "Digital Marketing",
-        desc: "Data-driven marketing campaigns, SEO optimization, and social media strategies for targeted growth.",
+        desc: "Strategic campaigns and useful content to help businesses reach their audience online.",
+        cardImage: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=900&q=82",
+        cardImageAlt: "Marketing analytics and campaign metrics displayed on a laptop",
         colorClass: "card-pink",
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg>`
-    },
-    {
-        id: "branding",
-        title: "Branding",
-        desc: "Complete corporate identity, brand voice, guidelines, and visual language to make your business stand out.",
-        colorClass: "card-teal",
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>`
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 18-5-5 18-4-8-9-5z"></path><path d="M12 16 19 9"></path></svg>`,
+        heroVisual: "analytics",
+        heroLabels: ["Campaign reach", "Engagement", "Conversions"],
+        description: "We help businesses reach their target audience through strategic digital campaigns, social media content and online marketing.",
+        useCases: [
+            ["Social Media Marketing", "Promote your brand through engaging social media content and campaigns.", "social", ["Brand stories", "Reels & posts", "Audience response"]],
+            ["Content Marketing", "Create useful content that attracts and engages your target audience.", "calendar", ["Blog", "Video", "Social post"]],
+            ["Lead Generation", "Turn online visitors into potential customers through targeted campaigns.", "funnel", ["Visitors", "Interested leads", "Customers"]],
+            ["Campaign Management", "Launch, monitor and improve online advertising campaigns.", "campaign", ["Campaign overview", "Active ads", "Budget"]],
+            ["Analytics & Performance", "Measure campaign performance and understand what is working.", "analytics", ["Reach", "Clicks", "Conversions"]]
+        ],
+        helps: ["Put your message in front of relevant audiences.", "Build a consistent rhythm for content and campaigns.", "Use performance signals to guide the next improvement."],
+        projects: [
+            ["Fashion Brand Social Media Campaign", "social", "A sample campaign concept with a coordinated social feed and performance view.", ["Content calendar", "Social posts", "Reels", "Captions", "Hashtags", "Performance tracking"]],
+            ["New Product Digital Campaign", "campaign", "A sample product-launch concept connecting promotional creative with audience results.", ["Promotional creatives", "Social campaign", "Audience targeting", "Lead collection", "Performance tracking"]]
+        ],
+        process: ["Research", "Strategy", "Content creation", "Campaign launch", "Monitoring", "Optimization", "Report"],
+        reasons: ["A plan shaped around your audience and goals.", "Creative and measurement considered together.", "Clear reporting that turns results into next steps."]
     },
     {
         id: "project-building",
         title: "Project Building",
-        desc: "End-to-end software product development from ideation and architecture to deployment and support.",
+        desc: "From early idea to working demonstration, with planning, development, testing and documentation.",
+        cardImage: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=900&q=82",
+        cardImageAlt: "Charts and reports in a software dashboard interface",
         colorClass: "card-indigo",
-        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>`
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-3"></path><path d="m16 3 5 5-9 9-5 1 1-5 8-10z"></path></svg>`,
+        heroVisual: "architecture",
+        heroLabels: ["Your idea", "Working system", "Clear demo"],
+        description: "We transform ideas into practical technology projects through planning, development, testing, documentation and deployment.",
+        useCases: [
+            ["AI & Machine Learning Projects", "Build intelligent systems that analyze data, recognize patterns and generate predictions.", "neural", ["Input data", "Model", "Prediction"]],
+            ["Data Analytics Projects", "Convert raw data into meaningful insights using analytics and visualization.", "dashboard", ["Data set", "Key trends", "Insights"]],
+            ["Web Application Projects", "Build complete web applications with interactive interfaces and data management.", "architecture", ["Frontend", "Backend", "Database"]],
+            ["Automation Projects", "Automate repetitive tasks and improve productivity using software solutions.", "workflow", ["Trigger", "Process", "Complete"]],
+            ["College Projects", "Turn academic ideas into functional projects with proper documentation and demonstration.", "presentation", ["Project brief", "Working demo", "Documentation"]]
+        ],
+        helps: ["Break a broad idea into testable milestones.", "Connect the interface, logic and data into a coherent demo.", "Make the implementation easier to explain and present."],
+        projects: [
+            ["AI-Based Image Forgery Detection", "neural", "A sample project concept for comparing an image with a model-generated authenticity assessment.", ["Image upload", "AI detection", "Real/fake prediction", "Confidence score", "Analysis graph", "Report generation"]],
+            ["Student Performance Analytics", "dashboard", "A sample analytics concept for exploring academic activity and performance patterns.", ["Data upload", "Data cleaning", "Data analysis", "Interactive charts", "Performance insights", "Reports"]]
+        ],
+        process: ["Idea", "Requirement analysis", "Architecture", "Development", "Testing", "Documentation", "Demo"],
+        reasons: ["A practical scope that fits the available time and resources.", "Visible progress through small, reviewable milestones.", "A usable demo with supporting project documentation."]
+    },
+    {
+        id: "branding",
+        title: "Branding",
+        desc: "Consistent brand identities that help businesses communicate clearly and be recognized.",
+        cardImage: "/INNOFUZE_Project_Images/Swasthik_Projects/Project_04.png",
+        cardImageAlt: "Swasthik Cafe logo design from the project portfolio",
+        cardImageFit: "contain",
+        colorClass: "card-teal",
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a9 9 0 1 0 9 9c0-1.1-.9-2-2-2h-1.5a1.5 1.5 0 0 1-1.5-1.5V8a5 5 0 0 0-5-5z"></path><circle cx="7.5" cy="10.5" r="1"></circle><circle cx="12" cy="7.5" r="1"></circle><circle cx="16.5" cy="10.5" r="1"></circle></svg>`,
+        heroVisual: "brandboard",
+        heroLabels: ["Logo system", "Color palette", "Brand touchpoints"],
+        description: "We create memorable and consistent brand identities that help businesses communicate their personality and build recognition.",
+        useCases: [
+            ["Logo Design", "Create a unique visual symbol that represents your business.", "logo", ["Concept sketches", "Refined mark", "Final lockup"]],
+            ["Brand Identity", "Build a consistent visual identity across every customer touchpoint.", "brandboard", ["Logo", "Color system", "Brand assets"]],
+            ["Color & Typography", "Choose colors and fonts that communicate the personality of your brand.", "type", ["Display type", "Body type", "Color palette"]],
+            ["Social Media Branding", "Create a consistent visual style across your social media presence.", "social", ["Profile", "Post system", "Story format"]],
+            ["Business Materials", "Extend your brand identity across professional business materials.", "stationery", ["Business card", "Letterhead", "Packaging"]]
+        ],
+        helps: ["Make your brand recognizable across channels.", "Give teams practical rules for consistent visuals.", "Create a clear foundation for future communication."],
+        projects: [
+            ["Tech Startup Brand Identity", "brandboard", "A sample identity concept showing how a technology brand can stay consistent across key touchpoints.", ["Logo", "Brand colors", "Typography", "Business card", "Social templates", "Brand guidelines"]],
+            ["Café Brand Identity", "stationery", "A sample café identity concept connecting a logo with menus, packaging and social visuals.", ["Logo", "Menu design", "Packaging", "Posters", "Social templates"]]
+        ],
+        process: ["Research", "Brand concept", "Logo design", "Color & typography", "Brand assets", "Brand guidelines"],
+        reasons: ["Identity choices anchored to your audience and purpose.", "A flexible system for both digital and print use.", "Useful guidance that keeps future work visually consistent."]
+    },
+    {
+        id: "digital-design",
+        title: "Digital Design",
+        desc: "Purposeful digital visuals for brands, businesses, events, websites and online campaigns.",
+        cardImage: "/INNOFUZE_Project_Images/Sridhar_Projects/Project_01.png",
+        cardImageAlt: "Digital poster design from the project portfolio",
+        cardImageFit: "contain",
+        colorClass: "card-purple",
+        icon: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"></path><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="m2 2 7.6 7.6"></path><circle cx="11" cy="11" r="2"></circle></svg>`,
+        heroVisual: "design-board",
+        heroLabels: ["Campaign artwork", "Interface screens", "Ready to share"],
+        description: "We create engaging digital visuals for brands, businesses, events, social media, websites and online campaigns.",
+        useCases: [
+            ["Social Media Posts", "Create attractive social media content that captures attention.", "social", ["Post designs", "Story frames", "Feed preview"]],
+            ["Posters & Banners", "Communicate events, offers and announcements through impactful visuals.", "poster", ["Event title", "Key details", "Call to action"]],
+            ["UI Design", "Design intuitive digital interfaces that are easy and enjoyable to use.", "mobile", ["Clear navigation", "Useful actions", "Readable content"]],
+            ["Presentation Design", "Turn information into clean, engaging and professional presentations.", "presentation", ["Key message", "Supporting data", "Takeaway"]],
+            ["Promotional Creatives", "Create visual advertisements that communicate your message clearly.", "campaign", ["Product focus", "Offer detail", "Next step"]]
+        ],
+        helps: ["Make information easier to scan and remember.", "Keep campaign visuals consistent across formats.", "Present products, events and ideas with clarity."],
+        projects: [
+            ["Instagram Promotional Pack", "social", "A sample social kit concept with coordinated feed, story and campaign artwork.", ["5 Instagram posts", "3 story designs", "2 promotional banners", "2 reel covers"]],
+            ["College Event Creative Pack", "poster", "A sample event-communication concept connecting promotional and informational artwork.", ["Event poster", "Invitation", "Certificate", "Social banner", "Presentation cover"]]
+        ],
+        process: ["Brief", "Concept", "Design", "Review", "Revision", "Final delivery"],
+        reasons: ["Layouts designed for the channel and audience.", "A clear review process to refine the right details.", "Consistent artwork prepared for practical digital use."]
+    }
+];
+
+const projectsData = [
+    {
+        id: 1,
+        owner: 'Sridhar',
+        name: 'Sridhar Project 01',
+        image: '/INNOFUZE_Project_Images/Sridhar_Projects/Project_01.png',
+        description: 'Creative and technology project artwork from the supplied Sridhar portfolio.',
+        technologies: [],
+        category: 'Sridhar Projects'
+    },
+    {
+        id: 2,
+        owner: 'Sridhar',
+        name: 'Sridhar Project 02',
+        image: '/INNOFUZE_Project_Images/Sridhar_Projects/Project_02.png',
+        description: 'Creative and technology project artwork from the supplied Sridhar portfolio.',
+        technologies: [],
+        category: 'Sridhar Projects'
+    },
+    {
+        id: 3,
+        owner: 'Swasthik',
+        name: 'Swasthik Project 01',
+        image: '/INNOFUZE_Project_Images/Swasthik_Projects/Project_01.png',
+        description: 'Creative design artwork from the supplied Swasthik portfolio.',
+        technologies: [],
+        category: 'Swasthik Projects'
+    },
+    {
+        id: 4,
+        owner: 'Swasthik',
+        name: 'Swasthik Project 02',
+        image: '/INNOFUZE_Project_Images/Swasthik_Projects/Project_02.png',
+        description: 'Creative design artwork from the supplied Swasthik portfolio.',
+        technologies: [],
+        category: 'Swasthik Projects'
+    },
+    {
+        id: 5,
+        owner: 'Swasthik',
+        name: 'Swasthik Project 03',
+        image: '/INNOFUZE_Project_Images/Swasthik_Projects/Project_03.png',
+        description: 'Creative design artwork from the supplied Swasthik portfolio.',
+        technologies: [],
+        category: 'Swasthik Projects'
+    },
+    {
+        id: 6,
+        owner: 'Swasthik',
+        name: 'Swasthik Project 04',
+        image: '/INNOFUZE_Project_Images/Swasthik_Projects/Project_04.png',
+        description: 'Creative design artwork from the supplied Swasthik portfolio.',
+        technologies: [],
+        category: 'Swasthik Projects'
+    },
+    {
+        id: 7,
+        owner: 'Sivanainar',
+        name: 'Drowsiness Detection',
+        video: '/projects/drowsiness-detection/drowsiness-detection.mp4',
+        service: 'Machine Learning / AI & Data Science',
+        description: 'A screen recording shows the project code in an editor and dashboard.py running in the terminal.',
+        technologies: [],
+        category: 'Sivanainar Projects'
+    },
+    {
+        id: 8,
+        owner: 'Nithiyasree',
+        name: 'Nithiyasree Project 01',
+        video: '/project-videos/interface%20svm%20random%20-%20Colab%20-%20Google%20Chrome%202026-04-04%2011-37-15.mp4',
+        aspectRatio: '1920 / 1020',
+        service: 'Machine Learning',
+        description: 'A Google Colab notebook is shown with project code and output.',
+        technologies: [],
+        category: 'Nithiyasree Projects'
+    },
+    {
+        id: 9,
+        owner: 'Nithiyasree',
+        name: 'TechPulse',
+        video: '/project-videos/Recording%202026-09-09%20190446.mp4',
+        aspectRatio: '1912 / 1014',
+        service: 'IT Infrastructure',
+        description: 'The TechPulse dashboard presents CPU and RAM usage, running applications, and monitoring controls.',
+        technologies: [],
+        category: 'Nithiyasree Projects'
+    },
+    {
+        id: 10,
+        owner: 'Nithiyasree',
+        name: 'Nithiyasree Project 03',
+        video: '/project-videos/Recording%202026-09-12%20202730.mp4',
+        aspectRatio: '1900 / 1078',
+        service: 'Software Development',
+        description: 'The recording shows source code in an editor and a separate command-line window with output.',
+        technologies: [],
+        category: 'Nithiyasree Projects'
     }
 ];
 
 const serviceKeywordMap = {
-    'web-dev': ['web', 'website', 'application', 'development', 'web development', 'web dev', 'website development', 'application development'],
-    'digital-designs': ['design', 'designs', 'digital design', 'digital designs', 'ui', 'ux', 'ui ux'],
-    'digital-marketing': ['marketing', 'digital marketing', 'seo', 'social media'],
-    'branding': ['brand', 'branding', 'brand identity'],
-    'project-building': ['project', 'project building', 'software project', 'ai', 'artificial intelligence', 'drowsiness', 'drowsiness detection', 'driver monitoring']
+    'web-application-development': ['web', 'website', 'application', 'development', 'web development', 'web dev', 'app'],
+    'digital-marketing': ['marketing', 'social media', 'content', 'campaign', 'analytics', 'lead generation'],
+    'project-building': ['project', 'ai', 'artificial intelligence', 'machine learning', 'analytics', 'automation', 'college project'],
+    'branding': ['brand', 'branding', 'logo', 'identity', 'color palette'],
+    'digital-design': ['design', 'digital design', 'graphic design', 'ui', 'poster', 'banner', 'presentation']
 };
 
 const servicesGrid = document.getElementById('servicesGrid');
@@ -59,35 +256,288 @@ const closeModalBtn = document.getElementById('closeRegisterModal');
 const registerForm = document.getElementById('registerForm');
 const toastEl = document.getElementById('toast');
 const projectDetailModal = document.getElementById('projectDetailModal');
-const projectDetailContent = document.getElementById('projectDetailContent');
 const closeProjectModalBtn = document.getElementById('closeProjectModal');
+const projectPreviewImage = document.getElementById('projectPreviewImage');
+const projectPreviewVideo = document.getElementById('projectPreviewVideo');
+const projectPreviewTitle = document.getElementById('projectPreviewTitle');
+const projectPreviewOwner = document.getElementById('projectPreviewOwner');
+const previousProjectBtn = document.getElementById('previousProject');
+const nextProjectBtn = document.getElementById('nextProject');
+const projectsGrid = document.getElementById('projectsGrid');
+const projectsEmptyState = document.getElementById('projectsEmptyState');
+const projectFilterButtons = document.querySelectorAll('[data-project-filter]');
+
+let activeProjectFilter = 'All Projects';
+let activeProjectQuery = '';
+let visibleProjects = projectsData;
+let activeProjectIndex = -1;
+const projectVideoObserver = 'IntersectionObserver' in window
+    ? new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.play().catch(() => {});
+            } else {
+                entry.target.pause();
+            }
+        });
+    }, { threshold: 0.25 })
+    : null;
 
 function renderServices(list = servicesData) {
     if (!servicesGrid) return;
     servicesGrid.innerHTML = '';
 
     list.forEach(service => {
-        const card = document.createElement('div');
-        card.className = `service-card ${service.colorClass}`;
+        const card = document.createElement('a');
+        card.className = `service-card service-directory-card ${service.colorClass}`;
         card.setAttribute('data-id', service.id);
         card.id = `search-${service.id}`;
+        card.href = `/services/${service.id}`;
+        card.setAttribute('aria-label', `Explore ${service.title}`);
 
         card.innerHTML = `
-            <div>
-                <div class="card-icon-wrap">
-                    ${service.icon}
-                </div>
-                <h3 class="service-card-title">${service.title}</h3>
+            <div class="directory-card-visual"></div>
+            <div class="directory-card-copy">
+                <div class="card-icon-wrap">${service.icon}</div>
+                <h2 class="service-card-title">${service.title}</h2>
                 <p class="service-card-desc">${service.desc}</p>
+                <span class="card-footer-link">Explore service <span aria-hidden="true">&rarr;</span></span>
             </div>
-            <a href="#" class="card-footer-link" data-service-id="${service.id}">
-                Get Started 
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </a>
         `;
+
+        const cardVisual = card.querySelector('.directory-card-visual');
+        if (servicesGrid.closest('.services-section') && service.cardImage) {
+            const image = document.createElement('img');
+            image.className = 'service-card-photo';
+            image.src = service.cardImage;
+            image.alt = service.cardImageAlt;
+            image.loading = 'lazy';
+            image.decoding = 'async';
+            if (service.cardImageFit) image.dataset.fit = service.cardImageFit;
+            image.addEventListener('error', () => {
+                cardVisual.innerHTML = renderConceptVisual(service.heroVisual, service.heroLabels, service.title);
+            }, { once: true });
+            cardVisual.appendChild(image);
+        } else {
+            cardVisual.innerHTML = renderConceptVisual(service.heroVisual, service.heroLabels, service.title);
+        }
 
         servicesGrid.appendChild(card);
     });
+}
+
+const conceptVisualImages = {
+    devices: { src: 'https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1000&q=82', alt: 'Website and application screens shown across desktop, tablet, and phone' },
+    browser: { src: 'https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1000&q=82', alt: 'Website pages displayed across desktop, tablet, and phone screens' },
+    commerce: { src: 'https://images.unsplash.com/photo-1556742502-ec7c0e9f34b1?auto=format&fit=crop&w=1000&q=82', alt: 'Customer completing an online shopping checkout on a laptop' },
+    portfolio: { src: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=1000&q=82', alt: 'Portfolio website displayed on a desktop screen' },
+    dashboard: { src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=82', alt: 'Business dashboard open on a laptop' },
+    mobile: { src: 'https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?auto=format&fit=crop&w=1000&q=82', alt: 'Smartphone displaying mobile applications' },
+    social: { src: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1000&q=82', alt: 'Campaign analytics dashboard on a laptop showing reach and engagement metrics' },
+    calendar: { src: 'https://images.unsplash.com/photo-1611224923853-80b023f02d71?auto=format&fit=crop&w=1000&q=82', alt: 'Campaign tasks organized on a content planning board' },
+    funnel: { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=82', alt: 'Marketing performance analytics shown in a dashboard' },
+    campaign: { src: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=82', alt: 'Marketing collaborators reviewing work on a laptop' },
+    analytics: { src: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=82', alt: 'Analytics dashboard showing campaign metrics and charts' },
+    neural: { src: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&w=1000&q=82', alt: 'Artificial intelligence visualization' },
+    architecture: { src: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&w=1000&q=82', alt: 'Server infrastructure supporting software systems' },
+    workflow: { src: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1000&q=82', alt: 'Project work and planning at a desk' },
+    presentation: { src: 'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1000&q=82', alt: 'Team presenting and discussing a project' },
+    brandboard: { src: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1000&q=82', alt: 'Brand identity and graphic design workspace' },
+    logo: { src: '/INNOFUZE_Project_Images/Swasthik_Projects/Project_04.png', alt: 'Swasthik Cafe logo artwork from the supplied project portfolio', fit: 'contain' },
+    type: { src: 'https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1000&q=82', alt: 'Graphic designer creating digital artwork' },
+    stationery: { src: 'https://images.unsplash.com/photo-1626785774573-4b799315345d?auto=format&fit=crop&w=1000&q=82', alt: 'Brand identity design materials and color references' },
+    'design-board': { src: 'https://images.unsplash.com/photo-1586717791821-3f44a563fa4c?auto=format&fit=crop&w=1000&q=82', alt: 'UI designer sketching interface layouts on a tablet' },
+    poster: { src: '/INNOFUZE_Project_Images/Sridhar_Projects/Project_01.png', alt: 'Digital promotional poster artwork from the supplied project portfolio', fit: 'contain' },
+    restaurant: { src: 'https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1000&q=82', alt: 'Restaurant dishes prepared for a food menu' }
+};
+
+function renderConceptVisual(kind, labels, accessibleLabel) {
+    const image = conceptVisualImages[kind] || conceptVisualImages.devices;
+    return `<div class="concept-visual concept-visual-${kind}"><img class="concept-visual-photo" src="${image.src}" alt="${image.alt}" data-fit="${image.fit || 'cover'}" loading="lazy" decoding="async"></div>`;
+}
+
+function renderServiceDetail(service) {
+    const catalog = document.getElementById('servicesCatalog');
+    const mount = document.getElementById('serviceDetailMount');
+    if (!catalog || !mount) return;
+
+    catalog.classList.add('hidden');
+    mount.classList.remove('hidden');
+    document.title = `${service.title} | INNOFUZE TECHNOLOGIES`;
+    document.querySelector('meta[name="description"]')?.setAttribute('content', service.description);
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === '/services');
+        if (link.getAttribute('href') === '/services') link.setAttribute('aria-current', 'page');
+        else link.removeAttribute('aria-current');
+    });
+
+    const useCases = service.useCases.map(([title, description, visual, labels]) => `
+        <article class="showcase-use-card reveal-on-scroll">
+            ${renderConceptVisual(visual, labels, `${service.title} ${title}`)}
+            <div class="showcase-use-copy"><div class="showcase-use-icon">${service.icon}</div><h3>${title}</h3><p>${description}</p></div>
+        </article>`).join('');
+    const projects = service.projects.map(([title, visual, description, features], index) => `
+        <article class="showcase-project reveal-on-scroll">
+            <div class="showcase-project-visual">${renderConceptVisual(visual, [title, index ? 'Project insights' : 'Concept preview', 'Innofuze'], title)}</div>
+            <div class="showcase-project-copy"><span class="showcase-eyebrow">SAMPLE CONCEPT 0${index + 1}</span><h3>${title}</h3><p>${description}</p><ul>${features.map(feature => `<li>${feature}</li>`).join('')}</ul></div>
+        </article>`).join('');
+    const process = service.process.map((step, index) => `<li class="showcase-process-step"><span>0${index + 1}</span><strong>${step}</strong></li>`).join('');
+    const helps = service.helps.map((item, index) => `<li><span>0${index + 1}</span>${item}</li>`).join('');
+    const reasons = service.reasons.map((item, index) => `<li><span>${service.icon}</span><div><strong>${['Purposeful by design', 'Built around your goals', 'Clear from start to finish'][index]}</strong><p>${item}</p></div></li>`).join('');
+
+    mount.innerHTML = `
+        <div class="service-detail-page">
+            <div class="showcase-detail-topline"><a href="/services" class="showcase-back-link">&larr; Back to Services</a><span>INNOFUZE / SERVICES / ${service.title}</span></div>
+            <section class="showcase-hero ${service.colorClass}">
+                <div class="showcase-hero-copy"><span class="section-badge">BUILT AROUND YOUR NEXT MOVE</span><h1>${service.title}</h1><p>${service.description}</p><a class="showcase-cta" href="#service-enquiry" data-enquiry-service-id="${service.id}">Start Your Project <span aria-hidden="true">&rarr;</span></a></div>
+                <div class="showcase-hero-visual">${renderConceptVisual(service.heroVisual, service.heroLabels, `${service.title} visual concept`)}</div>
+            </section>
+            <section class="showcase-section showcase-use-section"><header class="showcase-section-heading"><span class="section-badge">MADE TO BE USEFUL</span><h2>What is it used for?</h2><p>Explore the ways ${service.title.toLowerCase()} can bring an idea into focus.</p></header><div class="showcase-use-grid">${useCases}</div></section>
+            <section class="showcase-help-section"><div class="showcase-help-heading"><span class="section-badge">FROM COMPLEXITY TO CLARITY</span><h2>How it helps</h2><p>Good work makes the next step easier for the people using it.</p></div><ul class="showcase-help-list">${helps}</ul></section>
+            <section class="showcase-section showcase-project-section"><header class="showcase-section-heading"><span class="section-badge">POSSIBILITIES IN PRACTICE</span><h2>Sample project concepts</h2><p>Illustrative directions, not claims of completed client work.</p></header><div class="showcase-project-grid">${projects}</div></section>
+            <section class="showcase-process-section"><header class="showcase-section-heading"><span class="section-badge">A CLEAR WAY FORWARD</span><h2>Project workflow</h2></header><ol class="showcase-process-list">${process}</ol></section>
+            <section class="showcase-why-section"><div><span class="section-badge">WHY INNOFUZE</span><h2>Thoughtful work, from first brief to final handoff.</h2></div><ul class="showcase-reasons-list">${reasons}</ul></section>
+            <section class="showcase-final-cta" id="service-enquiry"><div><span class="section-badge">YOUR NEXT MOVE STARTS HERE</span><h2>Ready to Build Something Amazing?</h2><p>Have an idea in mind? Let's turn it into a professional digital solution.</p></div><div class="showcase-final-actions"><a class="showcase-cta" href="#service-enquiry" data-enquiry-service-id="${service.id}">Start Your Project <span aria-hidden="true">&rarr;</span></a><a class="showcase-back-link" href="/services">&larr; Back to Services</a></div></section>
+        </div>`;
+
+    observeShowcaseSections();
+}
+
+function observeShowcaseSections() {
+    const revealItems = document.querySelectorAll('.reveal-on-scroll:not(.is-visible)');
+    if (!('IntersectionObserver' in window)) {
+        revealItems.forEach(item => item.classList.add('is-visible'));
+        return;
+    }
+
+    const observer = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('is-visible');
+            observer.unobserve(entry.target);
+        });
+    }, { threshold: 0.12 });
+
+    revealItems.forEach(item => observer.observe(item));
+}
+
+function getMatchingProjects(category = activeProjectFilter, query = activeProjectQuery) {
+    const searchTerm = normalizeSearchTerm(query);
+
+    return projectsData.filter(project => {
+        const matchesCategory = category === 'All Projects' || project.category === category;
+        if (!matchesCategory) return false;
+        if (!searchTerm) return true;
+
+        const searchableText = normalizeSearchTerm([
+            project.name,
+            project.owner,
+            project.description,
+            project.category,
+            project.service || '',
+            ...project.technologies
+        ].join(' '));
+
+        return searchTerm.split(' ').every(term => searchableText.includes(term));
+    });
+}
+
+function renderProjects(category = activeProjectFilter, query = activeProjectQuery) {
+    if (!projectsGrid) return;
+
+    activeProjectFilter = category;
+    activeProjectQuery = normalizeSearchTerm(query);
+    visibleProjects = getMatchingProjects(activeProjectFilter, activeProjectQuery);
+    projectsGrid.querySelectorAll('.project-card-video').forEach(video => {
+        if (projectVideoObserver) projectVideoObserver.unobserve(video);
+        video.pause();
+    });
+    projectsGrid.replaceChildren();
+
+    projectFilterButtons.forEach(button => {
+        const isActive = button.dataset.projectFilter === activeProjectFilter;
+        button.classList.toggle('active', isActive);
+        button.setAttribute('aria-pressed', String(isActive));
+    });
+
+    visibleProjects.forEach(project => {
+        const card = document.createElement('article');
+        card.className = 'project-gallery-card';
+        card.id = `project-${project.id}`;
+
+        const imageButton = document.createElement('button');
+        imageButton.type = 'button';
+        imageButton.className = 'project-image-trigger';
+        imageButton.dataset.projectPreview = String(project.id);
+        imageButton.setAttribute('aria-label', `Preview ${project.name}`);
+
+        let previewVideo = null;
+        if (project.video) {
+            previewVideo = document.createElement('video');
+            previewVideo.className = 'project-card-video';
+            previewVideo.src = project.video;
+            if (project.aspectRatio) previewVideo.style.aspectRatio = project.aspectRatio;
+            previewVideo.muted = true;
+            previewVideo.loop = true;
+            previewVideo.autoplay = true;
+            previewVideo.playsInline = true;
+            previewVideo.preload = 'metadata';
+            previewVideo.setAttribute('aria-hidden', 'true');
+            imageButton.appendChild(previewVideo);
+        } else {
+            const image = document.createElement('img');
+            image.src = project.image;
+            image.alt = project.name;
+            image.loading = 'lazy';
+            imageButton.appendChild(image);
+        }
+
+        const details = document.createElement('div');
+        details.className = 'project-card-content';
+
+        const owner = document.createElement('span');
+        owner.className = 'project-owner-label';
+        owner.textContent = `Project by ${project.owner}`;
+
+        const title = document.createElement('h3');
+        title.className = 'project-card-title';
+        title.textContent = project.name;
+
+        if (project.service) {
+            const service = document.createElement('p');
+            service.className = 'project-card-service';
+            service.textContent = project.service;
+            details.append(owner, title, service);
+        } else {
+            details.append(owner, title);
+        }
+
+        const description = document.createElement('p');
+        description.className = 'project-card-description';
+        description.textContent = project.description;
+
+        const categoryLabel = document.createElement('span');
+        categoryLabel.className = 'project-category-label';
+        categoryLabel.textContent = project.category;
+
+        const viewButton = document.createElement('button');
+        viewButton.type = 'button';
+        viewButton.className = 'project-view-button';
+        viewButton.dataset.projectPreview = String(project.id);
+        viewButton.textContent = 'View Project';
+
+        details.append(description, categoryLabel, viewButton);
+        card.append(imageButton, details);
+        projectsGrid.appendChild(card);
+        if (previewVideo) {
+            if (projectVideoObserver) projectVideoObserver.observe(previewVideo);
+            else previewVideo.play().catch(() => {});
+        }
+    });
+
+    if (projectsEmptyState) {
+        projectsEmptyState.classList.toggle('hidden', visibleProjects.length > 0);
+    }
 }
 
 function normalizeSearchTerm(value) {
@@ -107,7 +557,7 @@ function getMatchedServiceIds(query) {
     Object.entries(serviceKeywordMap).forEach(([serviceId, keywords]) => {
         const isMatch = keywords.some(keyword => {
             const normalizedKeyword = normalizeSearchTerm(keyword);
-            return normalized === normalizedKeyword || normalized.includes(normalizedKeyword);
+            return (` ${normalized} `).includes(` ${normalizedKeyword} `);
         });
 
         if (isMatch) {
@@ -133,25 +583,27 @@ function hideSearchStatus() {
     servicesSearchStatus.innerHTML = '';
 }
 
-function showSearchStatus(query, results) {
+function showSearchStatus(query, serviceResults, projectResults = []) {
     if (!servicesSearchStatus) return;
     servicesSearchStatus.classList.remove('hidden');
     servicesSearchStatus.replaceChildren();
 
+    const resultCount = serviceResults.length + projectResults.length;
     const title = document.createElement('div');
     title.className = 'services-status-title';
-    title.textContent = results.length
-        ? `Found ${results.length} matching service${results.length === 1 ? '' : 's'}`
-        : 'No matching services found.';
+    title.textContent = resultCount
+        ? `Found ${resultCount} matching result${resultCount === 1 ? '' : 's'}`
+        : 'No results found';
 
     const subtitle = document.createElement('div');
     subtitle.className = 'services-status-subtitle';
-    subtitle.textContent = results.length
-        ? `Services matching "${query}". Select a result to jump to it.`
-        : 'Try Website, Design, Marketing, Branding, or Project Building.';
+    subtitle.textContent = resultCount
+        ? `Matches for "${query}". Select a result to jump to it.`
+        : 'Try Website, Design, Marketing, Branding, Project, Sridhar, or Swasthik.';
 
     servicesSearchStatus.append(title, subtitle);
 
+    const results = [...serviceResults, ...projectResults];
     if (results.length) {
         const resultList = document.createElement('div');
         resultList.className = 'site-search-results';
@@ -177,6 +629,7 @@ function showSearchStatus(query, results) {
     clearBtn.addEventListener('click', () => {
         if (heroSearchInput) heroSearchInput.value = '';
         renderServices();
+        renderProjects('All Projects', '');
         hideSearchStatus();
     });
     servicesSearchStatus.appendChild(clearBtn);
@@ -190,121 +643,105 @@ function getServiceSearchResults(matchedServices) {
     })).filter(result => result.target);
 }
 
+function getProjectSearchResults(matchedProjects) {
+    return matchedProjects.map(project => ({
+        title: project.name,
+        section: 'Projects',
+        target: document.getElementById(`project-${project.id}`)
+    })).filter(result => result.target);
+}
+
 function applyServiceSearch(query, shouldScroll = false) {
     const value = normalizeSearchTerm(query);
 
     if (!value) {
         renderServices();
+        renderProjects('All Projects', '');
         hideSearchStatus();
         return;
     }
 
     const matchedServices = servicesData.filter(service => serviceMatchesQuery(service, value));
     renderServices(matchedServices);
-    const results = getServiceSearchResults(matchedServices);
-    showSearchStatus(value, results);
+    const searchProjects = (value !== 'project building' && /\b(projects?|sridhar|swasthik)\b/.test(value)) || matchedServices.length === 0;
+    renderProjects(activeProjectFilter, searchProjects ? value : '');
+    const serviceResults = getServiceSearchResults(matchedServices);
+    const projectResults = searchProjects ? getProjectSearchResults(visibleProjects) : [];
+    showSearchStatus(value, serviceResults, projectResults);
 
-    if (shouldScroll && servicesSearchStatus) {
-        servicesSearchStatus.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    if (shouldScroll) {
+        const target = projectResults.length
+            ? document.getElementById('our-projects') || projectsGrid
+            : servicesSearchStatus;
+        if (target) target.scrollIntoView({ behavior: 'smooth', block: 'center' });
     }
 }
 
-function getProjectDetailMarkup(serviceId) {
-    if (serviceId === 'project-building') {
-        return `
-            <div class="project-detail-header">
-                <span class="project-detail-badge">Project Building</span>
-                <h3 class="project-detail-title">AI-Based Drowsiness Detection System</h3>
-                <p class="project-detail-subtitle">Real-Time Driver Monitoring &amp; Drowsiness Analysis</p>
-            </div>
-            <div class="project-detail-grid">
-                <div class="project-detail-main">
-                    <video class="project-video" controls playsinline preload="metadata" muted>
-                        <source src="/projects/drowsiness-detection/drowsiness-detection.mp4" type="video/mp4" />
-                        Your browser does not support the video tag.
-                    </video>
-                    <div class="project-description-box">
-                        <p>An AI-powered real-time monitoring system that uses a camera to detect driver drowsiness and monitor alertness. The system analyzes live camera input, detects drowsiness-related behavior, displays the current live status, records events, and provides session-level analysis.</p>
-                    </div>
-                </div>
-                <div class="project-detail-side">
-                    <div class="project-detail-card">
-                        <h4>Features</h4>
-                        <ul class="project-feature-list">
-                            <li>Real-Time Camera Monitoring</li>
-                            <li>Drowsiness Detection</li>
-                            <li>Live Driver Status</li>
-                            <li>Alert / Warning Detection</li>
-                            <li>Event Timeline</li>
-                            <li>Session Analysis</li>
-                            <li>Drowsiness Trend Monitoring</li>
-                            <li>Monitoring Report</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="project-documents">
-                <h4>Project Documents</h4>
-                <div class="project-doc-row">
-                    <span>Sridhar PDF</span>
-                    <div class="project-doc-actions">
-                        <a href="/projects/drowsiness-detection/sridhar.pdf" target="_blank" rel="noopener noreferrer" class="project-action-btn primary">View PDF</a>
-                        <a href="/projects/drowsiness-detection/sridhar.pdf" download class="project-action-btn secondary">Download PDF</a>
-                    </div>
-                </div>
-                <iframe class="project-pdf-preview" src="/projects/drowsiness-detection/sridhar.pdf" title="Sridhar PDF Preview"></iframe>
-            </div>
-        `;
-    }
+function updateProjectPreview() {
+    const project = visibleProjects[activeProjectIndex];
+    if (!project) return;
 
-    if (serviceId === 'digital-designs') {
-        return `
-            <div class="project-detail-header">
-                <span class="project-detail-badge">Digital Designs</span>
-                <h3 class="project-detail-title">Made by Swasthik</h3>
-                <p class="project-detail-subtitle">Design work and creative poster collection</p>
-            </div>
-            <div class="project-detail-grid single-column">
-                <div class="project-document-panel">
-                    <iframe class="project-pdf-preview" src="/projects/digital-designs/made-by-swasthik.pdf" title="Made by Swasthik PDF Preview"></iframe>
-                    <div class="project-doc-actions project-doc-actions-center">
-                        <a href="/projects/digital-designs/made-by-swasthik.pdf" target="_blank" rel="noopener noreferrer" class="project-action-btn primary">View PDF</a>
-                        <a href="/projects/digital-designs/made-by-swasthik.pdf" download class="project-action-btn secondary">Download PDF</a>
-                    </div>
-                </div>
-            </div>
-        `;
+    if (project.video && projectPreviewVideo) {
+        projectPreviewImage.classList.add('hidden');
+        projectPreviewVideo.classList.remove('hidden');
+        projectPreviewVideo.src = project.video;
+        projectPreviewVideo.setAttribute('aria-label', project.name);
+        projectPreviewVideo.load();
+    } else {
+        if (projectPreviewVideo) {
+            projectPreviewVideo.pause();
+            projectPreviewVideo.removeAttribute('src');
+            projectPreviewVideo.load();
+            projectPreviewVideo.classList.add('hidden');
+        }
+        projectPreviewImage.classList.remove('hidden');
+        projectPreviewImage.src = project.image;
+        projectPreviewImage.alt = project.name;
     }
-
-    return '';
+    projectPreviewTitle.textContent = project.name;
+    projectPreviewOwner.textContent = `Project by ${project.owner}`;
+    const disableControls = visibleProjects.length < 2;
+    previousProjectBtn.disabled = disableControls;
+    nextProjectBtn.disabled = disableControls;
 }
 
-function openProjectModal(serviceId) {
-    if (!projectDetailModal || !projectDetailContent) return;
-    projectDetailContent.innerHTML = getProjectDetailMarkup(serviceId);
+function openProjectPreview(projectId) {
+    if (!projectDetailModal) return;
+    visibleProjects = getMatchingProjects(activeProjectFilter, activeProjectQuery);
+    activeProjectIndex = visibleProjects.findIndex(project => project.id === projectId);
+    if (activeProjectIndex < 0) return;
+
+    updateProjectPreview();
     projectDetailModal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
 }
 
-function closeProjectModal() {
+function closeProjectPreview() {
     if (!projectDetailModal) return;
     projectDetailModal.classList.add('hidden');
     document.body.style.overflow = '';
+    activeProjectIndex = -1;
+    if (projectPreviewImage) projectPreviewImage.src = '';
+    if (projectPreviewVideo) {
+        projectPreviewVideo.pause();
+        projectPreviewVideo.removeAttribute('src');
+        projectPreviewVideo.load();
+        projectPreviewVideo.classList.add('hidden');
+    }
+}
+
+function showAdjacentProject(direction) {
+    if (visibleProjects.length < 2) return;
+    activeProjectIndex = (activeProjectIndex + direction + visibleProjects.length) % visibleProjects.length;
+    updateProjectPreview();
 }
 
 function handleServiceCardClick(event) {
-    const targetLink = event.target.closest('[data-service-id]');
-    if (!targetLink) return;
+    const serviceButton = event.target.closest('[data-service-id]');
+    if (!serviceButton) return;
 
     event.preventDefault();
-    const serviceId = targetLink.dataset.serviceId;
-
-    if (serviceId === 'project-building' || serviceId === 'digital-designs') {
-        openProjectModal(serviceId);
-        return;
-    }
-
-    openRegisterModal(event);
+    openServiceEnquiryModal(serviceButton.dataset.serviceId);
 }
 
 function handleHeroSearchSubmit() {
@@ -340,21 +777,70 @@ if (tagButtons) {
     });
 }
 
+projectFilterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+        renderProjects(button.dataset.projectFilter, activeProjectQuery);
+    });
+});
+
 if (closeProjectModalBtn) {
-    closeProjectModalBtn.addEventListener('click', closeProjectModal);
+    closeProjectModalBtn.addEventListener('click', closeProjectPreview);
 }
 
+if (previousProjectBtn) previousProjectBtn.addEventListener('click', () => showAdjacentProject(-1));
+if (nextProjectBtn) nextProjectBtn.addEventListener('click', () => showAdjacentProject(1));
+
 window.addEventListener('click', (e) => {
-    if (e.target === projectDetailModal) closeProjectModal();
+    if (e.target === projectDetailModal) closeProjectPreview();
 });
 
 window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
-        if (projectDetailModal && !projectDetailModal.classList.contains('hidden')) closeProjectModal();
+        if (projectDetailModal && !projectDetailModal.classList.contains('hidden')) closeProjectPreview();
     }
 });
 
 let registerModalPreviousOverflow = '';
+let serviceEnquiryPreviousOverflow = '';
+let serviceEnquiryCloseTimer;
+
+function openServiceEnquiryModal(serviceId) {
+    const modal = document.getElementById('serviceEnquiryModal');
+    const form = document.getElementById('serviceEnquiryForm');
+    const serviceSelect = document.getElementById('serviceEnquiryService');
+    const status = document.getElementById('serviceEnquiryStatus');
+    if (!modal || !form) return;
+
+    clearTimeout(serviceEnquiryCloseTimer);
+    form.reset();
+    if (status) {
+        status.textContent = '';
+        status.className = 'form-status-msg hidden';
+    }
+    const selectedService = servicesData.find(service => service.id === serviceId);
+    if (serviceSelect && selectedService) serviceSelect.value = selectedService.title;
+    serviceEnquiryPreviousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    modal.classList.remove('hidden');
+    document.getElementById('serviceEnquiryName').focus();
+}
+
+function closeServiceEnquiryModal() {
+    const modal = document.getElementById('serviceEnquiryModal');
+    const form = document.getElementById('serviceEnquiryForm');
+    const status = document.getElementById('serviceEnquiryStatus');
+    if (!modal) return;
+
+    clearTimeout(serviceEnquiryCloseTimer);
+    modal.classList.add('hidden');
+    document.body.style.overflow = serviceEnquiryPreviousOverflow;
+    serviceEnquiryPreviousOverflow = '';
+    if (form) form.reset();
+    if (status) {
+        status.textContent = '';
+        status.className = 'form-status-msg hidden';
+    }
+}
 
 function openRegisterModal(e) {
     if (e) e.preventDefault();
@@ -382,6 +868,57 @@ function closeRegisterModal() {
 
 if (registerBtn) registerBtn.addEventListener('click', openRegisterModal);
 if (closeModalBtn) closeModalBtn.addEventListener('click', closeRegisterModal);
+
+const closeServiceEnquiryBtn = document.getElementById('closeServiceEnquiry');
+const serviceEnquiryForm = document.getElementById('serviceEnquiryForm');
+
+if (closeServiceEnquiryBtn) closeServiceEnquiryBtn.addEventListener('click', closeServiceEnquiryModal);
+
+if (serviceEnquiryForm) {
+    serviceEnquiryForm.addEventListener('submit', async (event) => {
+        event.preventDefault();
+        const name = document.getElementById('serviceEnquiryName').value.trim();
+        const email = document.getElementById('serviceEnquiryEmail').value.trim();
+        const service = document.getElementById('serviceEnquiryService').value;
+        const message = document.getElementById('serviceEnquiryDescription').value.trim();
+        const status = document.getElementById('serviceEnquiryStatus');
+        const submitButton = document.getElementById('serviceEnquirySubmit');
+
+        if (!name || !email || !service || !message || !validateEmail(email)) {
+            status.textContent = 'Please complete all fields with a valid email address.';
+            status.className = 'form-status-msg error';
+            return;
+        }
+
+        submitButton.disabled = true;
+        submitButton.textContent = 'Submitting...';
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+                body: JSON.stringify({ name, email, service, message })
+            });
+            const result = await response.json().catch(() => ({}));
+
+            if (!response.ok) {
+                status.textContent = result.error || 'Unable to submit your enquiry right now. Please try again.';
+                status.className = 'form-status-msg error';
+                return;
+            }
+
+            status.textContent = 'Thank you! Your enquiry has been submitted successfully.';
+            status.className = 'form-status-msg success';
+            serviceEnquiryCloseTimer = setTimeout(closeServiceEnquiryModal, 3000);
+        } catch (error) {
+            status.textContent = 'Unable to submit your enquiry right now. Please try again.';
+            status.className = 'form-status-msg error';
+        } finally {
+            submitButton.disabled = false;
+            submitButton.textContent = 'Submit Enquiry';
+        }
+    });
+}
 
 const contactForm = document.getElementById('contactForm');
 const contactNameInput = document.getElementById('contactName');
@@ -424,15 +961,18 @@ if (closeChatModalBtn) closeChatModalBtn.addEventListener('click', closeChatModa
 
 window.addEventListener('click', (e) => {
     if (e.target === registerModal) closeRegisterModal();
+    if (e.target === document.getElementById('serviceEnquiryModal')) closeServiceEnquiryModal();
     if (e.target === chatModal) closeChatModal();
-    if (e.target === projectDetailModal) closeProjectModal();
+    if (e.target === projectDetailModal) closeProjectPreview();
 });
 
 window.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
         if (registerModal && !registerModal.classList.contains('hidden')) closeRegisterModal();
+        const serviceEnquiryModal = document.getElementById('serviceEnquiryModal');
+        if (serviceEnquiryModal && !serviceEnquiryModal.classList.contains('hidden')) closeServiceEnquiryModal();
         if (chatModal && !chatModal.classList.contains('hidden')) closeChatModal();
-        if (projectDetailModal && !projectDetailModal.classList.contains('hidden')) closeProjectModal();
+        if (projectDetailModal && !projectDetailModal.classList.contains('hidden')) closeProjectPreview();
     }
 });
 
@@ -648,13 +1188,12 @@ if (chatWhatsappBtn) {
 
 async function handleFormSubmit(event, url, getFormData, statusElement, submitBtn, successMessage) {
     event.preventDefault();
-    const formData = getFormData();
-    
     if (statusElement) {
         statusElement.textContent = '';
         statusElement.className = 'form-status-msg hidden';
     }
 
+    const formData = getFormData();
     if (!formData) return; // Validation failed
 
     const btnText = submitBtn.querySelector('span') || submitBtn;
@@ -825,27 +1364,20 @@ function showToast(message) {
     }, 4000);
 }
 
-window.addEventListener('scroll', () => {
-    const sections = document.querySelectorAll('section');
-    const navLinks = document.querySelectorAll('.nav-link');
-    let current = '';
-
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop - 120;
-        if (window.scrollY >= sectionTop) {
-            current = section.getAttribute('id');
-        }
-    });
-
-    navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-        }
-    });
-});
-
 document.addEventListener('click', (event) => {
+    const enquiryLink = event.target.closest('[data-enquiry-service-id]');
+    if (enquiryLink) {
+        event.preventDefault();
+        openServiceEnquiryModal(enquiryLink.dataset.enquiryServiceId);
+        return;
+    }
+
+    const projectPreviewButton = event.target.closest('[data-project-preview]');
+    if (projectPreviewButton) {
+        openProjectPreview(Number(projectPreviewButton.dataset.projectPreview));
+        return;
+    }
+
     const serviceLink = event.target.closest('[data-service-id]');
     if (serviceLink) {
         handleServiceCardClick(event);
@@ -854,5 +1386,15 @@ document.addEventListener('click', (event) => {
 
 document.addEventListener('DOMContentLoaded', async () => {
     renderServices();
+    renderProjects('All Projects', '');
+    const detailPrefix = '/services/';
+    const detailId = window.location.pathname.startsWith(detailPrefix)
+        ? window.location.pathname.slice(detailPrefix.length).replace(/\/$/, '')
+        : '';
+    const serviceDetail = servicesData.find(service => service.id === detailId);
+    if (serviceDetail) renderServiceDetail(serviceDetail);
+    const requestedAction = new URLSearchParams(window.location.search).get('action');
+    if (requestedAction === 'chat') openChatModal();
+    if (requestedAction === 'register') openRegisterModal();
     await loadContactConfig();
 });
